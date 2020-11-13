@@ -1,0 +1,46 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img
+      src="{{occasion.logo}}"
+      alt="{{occasion.type}}"
+      style="max-height: 100px">
+  </div>
+</div>
+<div class="row">
+  <div class="com-xs-12">
+    <h1>{{occasion.type.toUpperCase()}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p>{{occasion.userName}} {{occasion.userSurname}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <p>{{occasion.date| date: 'yyyy-MM-dd'}}</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group">
+      <button
+        type="button"
+        class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Manage Event
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" href="#">Edit event</a>
+        <a class="dropdown-item" href="#">Delete event</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <p>Gift list</p>
+  </div>
+</div>
+
+

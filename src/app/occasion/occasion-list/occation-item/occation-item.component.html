@@ -1,0 +1,13 @@
+<a href="#"
+   (click)="onSelect(occasion)">
+  <div class="list-group-item text-secondary clearfix">
+    <div class="float-left">
+      <h4 class="alert-heading">{{occasion.type.toUpperCase()}}</h4>
+      <p>{{occasion.userName}} {{occasion.userSurname}}</p>
+      <p>{{occasion.date| date: 'yyyy-MM-dd'}}</p>
+    </div>
+    <span class="float-right">
+      <img src="{{occasion.logo}}" alt="{{occasion.type}}" style="max-height: 50px">
+    </span>
+  </div>
+</a>

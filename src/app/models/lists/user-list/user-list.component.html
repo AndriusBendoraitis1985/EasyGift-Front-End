@@ -1,0 +1,32 @@
+<div class="card my-5">
+  <div class="card-header">Table of users</div>
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Email</th>
+        <th scope="col">Birthday</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td *ngIf="userName===user.firstName||userName===''">{{user.id}}</td>
+        <td *ngIf="userName===user.firstName||userName===''">{{ user.firstName }}</td>
+        <td *ngIf="userName===user.firstName||userName===''">{{ user.lastName }}</td>
+        <td *ngIf="userName===user.firstName||userName===''">{{ user.email }}</td>
+        <td *ngIf="userName===user.firstName||userName===''">{{ user.birthday | date: 'yyyy-MM-dd'}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div>
+  <label>User name</label>
+</div>
+<input style="width: 200px; display: inline" type="text" class="form-control" [(ngModel)]="tempUserName">
+<button style="margin-left: 10px" class="btn btn-primary" (click)="filterUsersByName()">Filter</button>
+
+

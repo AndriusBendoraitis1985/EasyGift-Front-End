@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xl">
+    <form>
+      <div class="row">
+        <div class="col-2 form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" class="form-control" #nameInput>
+        </div>
+        <div class="col-2 form-group">
+          <label for="surname">Surname</label>
+          <input type="text" id="surname" class="form-control" #surnameInput>
+        </div>
+        <div class="col-2 form-group">
+          <label for="occasion">Event Type</label>
+          <input type="text" id="occasion" class="form-control" #occasion>
+        </div>
+        <div class="col-2 form-group">
+          <label for="date">Date</label>
+          <input type="date" id="date" class="form-control" #date>
+        </div>
+        <div class="col-3 form-group">
+          <label for="description">Description</label>
+          <input type="text" id="description" class="form-control" #description>
+        </div>
+        <div class="col-1 form-group">
+          <label for="link">Link</label>
+          <input type="text" id="link" class="form-control" #link>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-secondary" type="submit" (click)="onAddNewEntry()">Add</button>
+          <button class="btn btn-secondary" type="submit">Edit</button>
+          <button class="btn btn-secondary" type="submit">Delete</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

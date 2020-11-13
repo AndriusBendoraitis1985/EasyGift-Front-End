@@ -1,0 +1,14 @@
+<app-header (selectedFeature)="onNavigate($event)"></app-header>
+<!--<div class="container">-->
+<!--  <router-outlet></router-outlet>-->
+<!--</div>-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-occasion *ngIf="loadedFeature==='event'"></app-occasion>
+      <app-history *ngIf="loadedFeature==='history'"></app-history>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,28 @@
+<div class="col">
+  <div class="col">
+    <button class="btn btn-secondary">New Event</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col">
+    <div *ngFor="let occasion of occasions">
+      <ng-container
+        *ngIf="(userNameFilter.toUpperCase()===occasion.userName.toUpperCase()||userNameFilter==='')
+    &&(eventTypeFilter.toUpperCase()===occasion.type.toUpperCase()||eventTypeFilter==='')">
+        <app-occation-item [occasion]="occasion"></app-occation-item>
+      </ng-container>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col">
+    <label> Filter by User name</label>
+    <input type="text" class="form-control" [(ngModel)]="userNameFilter">
+  </div>
+  <div class="col">
+    <label> Filter by Type</label>
+    <input type="text" class="form-control" [(ngModel)]="eventTypeFilter">
+  </div>
+</div>

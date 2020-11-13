@@ -1,0 +1,11 @@
+p {
+  margin-bottom: 0;
+  font-size: 12px;
+}
+h4 {
+  margin-bottom: 3px;
+}
+.list-group-item {
+  margin-bottom: 5px;
+  border: lightgrey 1px solid;
+}

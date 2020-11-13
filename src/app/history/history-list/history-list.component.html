@@ -1,0 +1,29 @@
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Name</th>
+    <th scope="col">Surname</th>
+    <th scope="col">Event</th>
+    <th scope="col">Date</th>
+    <th scope="col">Description</th>
+    <th scope="col">Picture</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let historyEntry of historyEntries; let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{historyEntry.name}}</td>
+    <td>{{historyEntry.surname}}</td>
+    <td>{{historyEntry.occasionType.toUpperCase()}}</td>
+    <td>{{historyEntry.date| date: 'yyyy-MM-dd'}}</td>
+    <td>{{historyEntry.description}}</td>
+    <td><a href="#" (click)="onSelectLink(historyEntry)" data-toggle="modal" data-target="#picture">
+      <img
+        src="{{historyEntry.link}}"
+        style="max-height:50px"
+        alt="{{historyEntry.description}}"></a></td>
+  </tr>
+  </tbody>
+</table>
+<app-history-modal></app-history-modal>
