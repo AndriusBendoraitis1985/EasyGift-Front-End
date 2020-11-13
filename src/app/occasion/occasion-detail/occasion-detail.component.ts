@@ -9,7 +9,6 @@ import {Occasion} from '../occasion-list/occasion.model';
 export class OccasionDetailComponent implements OnInit {
   @Input()
   occasion: Occasion;
-  displayMenu = false;
 
   constructor() {
   }

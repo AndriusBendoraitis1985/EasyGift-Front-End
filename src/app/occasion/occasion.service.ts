@@ -10,7 +10,6 @@ export class OccasionService {
 
   private occations: Occasion[] = [
     new Occasion(
-      'https://images.heb.com/is/image/HEBGrocery/prd-small/h-e-b-white-cake-with-strawberry-bettercreme-icing-002118478.jpg',
       'Andrius',
       'Bendoraitis',
       'birthday',
@@ -27,7 +26,6 @@ export class OccasionService {
         )
       ]),
     new Occasion(
-      'https://images-na.ssl-images-amazon.com/images/I/61-HxZggJ7L._AC_SL1300_.jpg',
       'Elvyra',
       'Bendoraitiene',
       'weddings',

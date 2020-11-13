@@ -3,11 +3,11 @@ import {Occasion} from '../occasion.model';
 import {OccasionService} from '../../occasion.service';
 
 @Component({
-  selector: 'app-occation-item',
-  templateUrl: './occation-item.component.html',
-  styleUrls: ['./occation-item.component.css']
+  selector: 'app-occasion-item',
+  templateUrl: './occasion-item.component.html',
+  styleUrls: ['./occasion-item.component.css']
 })
-export class OccationItemComponent implements OnInit {
+export class OccasionItemComponent implements OnInit {
   @Input()
   occasion: Occasion;
 

@@ -2,7 +2,6 @@ import {Gift} from '../../shared/gift.model';
 
 export class Occasion {
   public id: number;
-  public logo: string;
   public userName: string;
   public userSurname: string;
   public type: string;
@@ -10,8 +9,7 @@ export class Occasion {
   public gifts: Gift [];
 
 
-  constructor(logo: string, userName: string, userSurname: string, type: string, date: Date, gifts: Gift[]) {
-    this.logo = logo;
+  constructor(userName: string, userSurname: string, type: string, date: Date, gifts: Gift[]) {
     this.userName = userName;
     this.userSurname = userSurname;
     this.type = type;

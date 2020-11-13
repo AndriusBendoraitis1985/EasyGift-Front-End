@@ -1,7 +1,13 @@
 <div class="row">
   <div class="col-xs-12">
     <img
-      src="{{occasion.logo}}"
+      *ngIf="occasion.type === 'birthday'"
+      src="assets/birthdayLogo.jpg"
+      alt="{{occasion.type}}"
+      style="max-height: 100px">
+    <img
+      *ngIf="occasion.type === 'weddings'"
+      src="assets/weddingsLogo.jpg"
       alt="{{occasion.type}}"
       style="max-height: 100px">
   </div>

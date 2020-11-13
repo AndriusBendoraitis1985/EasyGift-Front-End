@@ -7,7 +7,8 @@
       <p>{{occasion.date| date: 'yyyy-MM-dd'}}</p>
     </div>
     <span class="float-right">
-      <img src="{{occasion.logo}}" alt="{{occasion.type}}" style="max-height: 50px">
+      <img *ngFor="let gift of occasion.gifts" src="{{gift.imaginePath}}" alt="{{gift.description}}" style="max-width:
+       60px; max-height: 60px; padding-right: 5px">
     </span>
   </div>
 </a>

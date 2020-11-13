@@ -16,7 +16,7 @@ import {OccasionDetailComponent} from './occasion/occasion-detail/occasion-detai
 import {HistoryComponent} from './history/history.component';
 import {HistoryEditComponent} from './history/history-edit/history-edit.component';
 import {HistoryListComponent} from './history/history-list/history-list.component';
-import {OccationItemComponent} from './occasion/occasion-list/occation-item/occation-item.component';
+import {OccasionItemComponent} from './occasion/occasion-list/occation-item/occasion-item.component';
 import {HistoryModalComponent} from './history/history-list/history-modal/history-modal.component';
 
 @NgModule({
@@ -32,7 +32,7 @@ import {HistoryModalComponent} from './history/history-list/history-modal/histor
     HistoryComponent,
     HistoryEditComponent,
     HistoryListComponent,
-    OccationItemComponent,
+    OccasionItemComponent,
     HistoryModalComponent,
   ],
   imports: [
