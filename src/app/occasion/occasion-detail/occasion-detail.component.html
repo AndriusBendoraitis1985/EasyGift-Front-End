@@ -36,10 +36,40 @@
     </div>
   </div>
 </div>
-
+<div class="row" style="padding-top: 50px">
+</div>
+<div class="col-xs-12">
+  <h3>Gift list</h3>
+</div>
 <div class="row">
   <div class="col-xs-12">
-    <p>Gift list</p>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">Description</th>
+        <th scope="col">Picture</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Check</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let gift of occasion.gifts">
+        <td>{{gift.description}}</td>
+        <td><img src="{{gift.imaginePath}}" style="max-height: 50px" alt="{{gift.description}}"></td>
+        <td>
+          <img src="https://townsquare.media/site/782/files/2017/04/fc550x550white.u3.jpg?w=550&h=550&q=75"
+               style="max-height: 20px; cursor: pointer" class="img-fluid">
+          {{gift.rating}}
+        </td>
+        <td class="float-right"><input type="checkbox" class="form-check-input"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-secondary">Confirm gift(s)</button>
   </div>
 </div>
 

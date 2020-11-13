@@ -1,13 +1,13 @@
 export class Gift {
   public description: string;
-  public link: string;
   public imaginePath: string;
+  public rating: number;
 
 
-  constructor(description: string, link: string, imaginePath: string) {
+  constructor(description: string, imaginePath: string, rating: number) {
     this.description = description;
-    this.link = link;
     this.imaginePath = imaginePath;
+    this.rating = rating;
   }
 }
 

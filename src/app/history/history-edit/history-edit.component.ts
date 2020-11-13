@@ -13,7 +13,7 @@ export class HistoryEditComponent implements OnInit {
   @ViewChild('occasion') occasionInputRef;
   @ViewChild('date') dateInputRef;
   @ViewChild('description') descriptionInputRef;
-  @ViewChild('link') linkInputRef;
+  @ViewChild('picture') linkInputRef;
 
   constructor(private historyService: HistoryService) {
   }
