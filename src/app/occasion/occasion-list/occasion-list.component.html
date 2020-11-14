@@ -9,7 +9,7 @@
     <div *ngFor="let occasion of occasions">
       <ng-container
         *ngIf="(userNameFilter.toUpperCase()===occasion.userName.toUpperCase()||userNameFilter==='')
-    &&(eventTypeFilter.toUpperCase()===occasion.type.toUpperCase()||eventTypeFilter==='')">
+    &&(eventTypeFilter.toUpperCase()===occasion.occasionType.toUpperCase()||eventTypeFilter==='')">
         <app-occasion-item [occasion]="occasion"></app-occasion-item>
       </ng-container>
     </div>

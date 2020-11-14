@@ -11,14 +11,17 @@ export class HistoryListComponent implements OnInit {
   historyEntries: HistoryEntry[];
 
   constructor(private historyService: HistoryService) {
-    console.log('history list invoked');
+
   }
 
   ngOnInit(): void {
-    this.historyEntries = this.historyService.getHistoryEntries();
+    this.historyService.finAll().subscribe(
+      data => {
+        this.historyEntries = data;
+      });
   }
 
-  onSelectLink(historyEntry: HistoryEntry) {
+  onSelectLink(historyEntry: HistoryEntry): void {
     this.historyService.selectedHistoryEntry.emit(historyEntry);
   }
 }

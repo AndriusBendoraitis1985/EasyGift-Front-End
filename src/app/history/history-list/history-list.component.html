@@ -13,16 +13,16 @@
   <tbody>
   <tr *ngFor="let historyEntry of historyEntries; let i = index">
     <th scope="row">{{i + 1}}</th>
-    <td>{{historyEntry.name}}</td>
-    <td>{{historyEntry.surname}}</td>
-    <td>{{historyEntry.occasionType.toUpperCase()}}</td>
-    <td>{{historyEntry.date| date: 'yyyy-MM-dd'}}</td>
-    <td>{{historyEntry.description}}</td>
+    <td>{{historyEntry.userName}}</td>
+    <td>{{historyEntry.userSurname}}</td>
+    <td>{{historyEntry.historyType.toUpperCase()}}</td>
+    <td>{{historyEntry.historyDate| date: 'yyyy-MM-dd'}}</td>
+    <td>{{historyEntry.historyDescription}}</td>
     <td><a href="#" (click)="onSelectLink(historyEntry)" data-toggle="modal" data-target="#picture">
       <img
-        src="{{historyEntry.link}}"
+        src="{{historyEntry.historyImaginePath}}"
         style="max-height:50px"
-        alt="{{historyEntry.description}}"></a></td>
+        alt="{{historyEntry.historyDescription}}"></a></td>
   </tr>
   </tbody>
 </table>

@@ -1,17 +1,25 @@
 export class HistoryEntry {
-  public name: string;
-  public surname: string;
-  public occasionType: string;
-  public date: Date;
-  public description: string;
-  public link: string;
+  public historyEntryId: number;
+  public userName: string;
+  public userSurname: string;
+  public historyType: string;
+  public historyDate: Date;
+  public historyDescription: string;
+  public historyImaginePath: string;
 
-  constructor(name: string, surname: string, occasionType: string, date: Date, description: string, link: string) {
-    this.name = name;
-    this.surname = surname;
-    this.occasionType = occasionType;
-    this.date = date;
-    this.description = description;
-    this.link = link;
+  constructor(
+    name: string,
+    surname: string,
+    historyType: string,
+    historyDate: Date,
+    historyDescription: string,
+    historyImaginePath: string
+  ) {
+    this.userName = name;
+    this.userSurname = surname;
+    this.historyType = historyType;
+    this.historyDate = historyDate;
+    this.historyDescription = historyDescription;
+    this.historyImaginePath = historyImaginePath;
   }
 }

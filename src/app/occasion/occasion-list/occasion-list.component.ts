@@ -17,7 +17,6 @@ export class OccasionListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.occasions = this.occasionService.getOccasions();
     this.occasionService.findAll().subscribe(
       data => {
         this.occasions = data;

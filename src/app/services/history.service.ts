@@ -1,26 +1,24 @@
 import {Injectable, EventEmitter} from '@angular/core';
 import {HistoryEntry} from '../models/history-entry.model';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HistoryService {
   selectedHistoryEntry = new EventEmitter<HistoryEntry>();
+  private readonly historyUrl: string;
 
-  historyEntries: HistoryEntry [] = [
-    new HistoryEntry('Kamile', 'Bendotaityte', 'birthday', new Date('2016-06-16'), 'doll', 'https://images-na.ssl-images-amazon.com/images/I/714yfUZN8WL._SY879_.jpg'),
-    new HistoryEntry('Aleksandr', 'Cerniuk', 'christmas', new Date('2020-12-24'), 'workshop tools', 'https://cdn.goodao.net/jjfixman/145.jpg')
-  ];
-
-  constructor() {
+  constructor(private http: HttpClient) {
+    this.historyUrl = 'http://localhost:8080/history';
   }
 
-  getHistoryEntries(): HistoryEntry[] {
-    return this.historyEntries;
+  public finAll(): Observable<HistoryEntry[]> {
+    return this.http.get<HistoryEntry[]>(this.historyUrl);
   }
 
-  addNewHistoryEntry(newHistoryEntry: HistoryEntry) {
-    this.historyEntries.push(newHistoryEntry);
-
+  public addNewHistoryEntry(newHistoryEntry: HistoryEntry): void {
+    // this.historyEntries.push(newHistoryEntry);
   }
 }

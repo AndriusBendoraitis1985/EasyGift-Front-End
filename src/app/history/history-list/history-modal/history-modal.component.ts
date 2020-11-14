@@ -8,7 +8,7 @@ import {HistoryService} from '../../../services/history.service';
   styleUrls: ['./history-modal.component.css']
 })
 export class HistoryModalComponent implements OnInit {
-  historyEntry: HistoryEntry = this.historyService.getHistoryEntries()[0];
+  historyEntry: HistoryEntry;
 
 
   constructor(private historyService: HistoryService) {
