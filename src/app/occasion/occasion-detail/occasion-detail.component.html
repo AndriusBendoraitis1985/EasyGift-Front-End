@@ -1,19 +1,19 @@
+<!--<div class="row">-->
+<!--  <div class="col-xs-12">-->
+<!--    <img-->
+<!--      *ngIf="occasion.type === 'birthday'"-->
+<!--      src="assets/birthdayLogo.jpg"-->
+<!--      alt="{{occasion.type}}"-->
+<!--      style="max-height: 100px">-->
+<!--    <img-->
+<!--      *ngIf="occasion.type === 'weddings'"-->
+<!--      src="assets/weddingsLogo.jpg"-->
+<!--      alt="{{occasion.type}}"-->
+<!--      style="max-height: 100px">-->
+<!--  </div>-->
+<!--</div>-->
 <div class="row">
-  <div class="col-xs-12">
-    <img
-      *ngIf="occasion.type === 'birthday'"
-      src="assets/birthdayLogo.jpg"
-      alt="{{occasion.type}}"
-      style="max-height: 100px">
-    <img
-      *ngIf="occasion.type === 'weddings'"
-      src="assets/weddingsLogo.jpg"
-      alt="{{occasion.type}}"
-      style="max-height: 100px">
-  </div>
-</div>
-<div class="row">
-  <div class="com-xs-12">
+  <div class="com-xs-12 ">
     <h1>{{occasion.type.toUpperCase()}}</h1>
   </div>
 </div>
@@ -24,7 +24,7 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <p>{{occasion.date| date: 'yyyy-MM-dd'}}</p>
+    <p>{{occasion.occasionDate| date: 'yyyy-MM-dd'}}</p>
   </div>
 </div>
 <div class="row">
@@ -38,6 +38,7 @@
       <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <a class="dropdown-item" href="#">Edit event</a>
         <a class="dropdown-item" href="#">Delete event</a>
+        <a class="dropdown-item" href="#">Add new Gift</a>
       </div>
     </div>
   </div>
@@ -60,8 +61,8 @@
       </thead>
       <tbody>
       <tr *ngFor="let gift of occasion.gifts">
-        <td>{{gift.description}}</td>
-        <td><img src="{{gift.imaginePath}}" style="max-height: 50px" alt="{{gift.description}}"></td>
+        <td>{{gift.giftDescription}}</td>
+        <td><img src="{{gift.imaginePath}}" style="max-height: 50px" alt="{{gift.giftDescription}}"></td>
         <td>
           <img src="https://townsquare.media/site/782/files/2017/04/fc550x550white.u3.jpg?w=550&h=550&q=75"
                style="max-height: 20px; cursor: pointer" class="img-fluid">
@@ -73,9 +74,10 @@
     </table>
   </div>
 </div>
+
 <div class="row">
-  <div class="col-xs-12">
-    <button class="btn btn-secondary">Confirm gift(s)</button>
+  <div class="col-xs-12 ">
+    <button class="btn btn-secondary">Confirm and organize</button>
   </div>
 </div>
 

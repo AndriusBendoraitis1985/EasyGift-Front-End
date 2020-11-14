@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Occasion} from '../occasion-list/occasion.model';
+import {Occasion} from '../../models/occasion.model';
 
 @Component({
   selector: 'app-occasion-detail',

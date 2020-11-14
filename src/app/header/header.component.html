@@ -1,13 +1,15 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="#"><img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJ82i9Msb2f8dK565fpQQou6SU-WnFBfiBIQ&usqp=CAU"
+    style="max-height: 25px"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-link" href="#" >Home <span class="sr-only">(current)</span></a>
-      <a class="nav-link" href="#"(click)="onselect('event')">Events</a>
-      <a class="nav-link" href="#" (click)="onselect('history')">History</a>
+      <a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a class="nav-link" routerLink="/events" routerLinkActive="active">Events</a>
+      <a class="nav-link" routerLink="/history" routerLinkActive="active">History</a>
       <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Top Gifts</a>
     </div>
   </div>

@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {HistoryService} from '../history.service';
-import {HistoryEntry} from '../history-list/history-entry.model';
+import {HistoryService} from '../../services/history.service';
+import {HistoryEntry} from '../../models/history-entry.model';
 
 @Component({
   selector: 'app-history-edit',

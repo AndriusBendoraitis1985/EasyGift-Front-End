@@ -1,6 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Occasion} from './occasion.model';
-import {OccasionService} from '../occasion.service';
+import {Occasion} from '../../models/occasion.model';
+import {OccasionService} from '../../services/occasion.service';
 
 @Component({
   selector: 'app-occasion-list',
@@ -17,9 +17,11 @@ export class OccasionListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.occasions = this.occasionService.getOccasions();
+    // this.occasions = this.occasionService.getOccasions();
+    this.occasionService.findAll().subscribe(
+      data => {
+        this.occasions = data;
+      });
+    console.log('Occasions data fetched');
   }
-
-
-
 }

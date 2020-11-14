@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {HistoryEntry} from '../history-entry.model';
-import {HistoryService} from '../../history.service';
+import {HistoryEntry} from '../../../models/history-entry.model';
+import {HistoryService} from '../../../services/history.service';
 
 @Component({
   selector: 'app-history-modal',
@@ -8,22 +8,17 @@ import {HistoryService} from '../../history.service';
   styleUrls: ['./history-modal.component.css']
 })
 export class HistoryModalComponent implements OnInit {
-  historyEntry: HistoryEntry = {
-    name: '',
-    surname: '',
-    occasionType: '',
-    date: new Date(''),
-    description: '',
-    link: ''
-  };
+  historyEntry: HistoryEntry = this.historyService.getHistoryEntries()[0];
+
 
   constructor(private historyService: HistoryService) {
-  }
-
-  ngOnInit(): void {
     this.historyService.selectedHistoryEntry.subscribe(
       (historyEntry: HistoryEntry) => {
         this.historyEntry = historyEntry;
       });
+  }
+
+  ngOnInit(): void {
+
   }
 }

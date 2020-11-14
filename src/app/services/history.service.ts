@@ -1,5 +1,5 @@
 import {Injectable, EventEmitter} from '@angular/core';
-import {HistoryEntry} from './history-list/history-entry.model';
+import {HistoryEntry} from '../models/history-entry.model';
 
 @Injectable({
   providedIn: 'root'
