@@ -12,8 +12,8 @@ export class GiftService {
   constructor(private http: HttpClient) {
   }
 
-  public addLike(gift: Gift): Observable<Gift> {
-    gift.rating++;
-    return this.http.put<Gift>(this.giftsUrl + '/like', gift);
+  public getAllGifts(): Observable<Gift[]> {
+    return this.http.get<Gift[]>(this.giftsUrl);
   }
+
 }

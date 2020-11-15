@@ -4,7 +4,6 @@ export class Gift {
   public imaginePath: string;
   public rating: number;
 
-
   constructor(giftDescription: string, imaginePath: string, rating: number) {
     this.giftDescription = giftDescription;
     this.imaginePath = imaginePath;

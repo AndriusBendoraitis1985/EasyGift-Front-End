@@ -2,6 +2,7 @@ import {Injectable, EventEmitter} from '@angular/core';
 import {Occasion} from '../models/occasion.model';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Gift} from '../models/gift.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,4 +19,8 @@ export class OccasionService {
     console.log('from occasion service');
     return this.http.get<Occasion[]>(this.occasionsUrl);
   }
+
+  public addLike(giftId: number, occasion: Occasion): Observable<Gift> {
+    return this.http.put<Gift>(this.occasionsUrl +  '/gifts/' + giftId, occasion);
+   }
 }

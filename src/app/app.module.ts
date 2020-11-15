@@ -15,11 +15,13 @@ import {HistoryEditComponent} from './history/history-edit/history-edit.componen
 import {HistoryListComponent} from './history/history-list/history-list.component';
 import {OccasionItemComponent} from './occasion/occasion-list/occation-item/occasion-item.component';
 import {HistoryModalComponent} from './history/history-list/history-modal/history-modal.component';
+import { TopGiftsComponent } from './top-gifts/top-gifts.component';
 
 const appRoutes: Routes = [
   {path: '', component: OccasionComponent},
   {path: 'events', component: OccasionComponent},
   {path: 'history', component: HistoryComponent},
+  {path: 'gifts', component: TopGiftsComponent}
 ];
 
 
@@ -36,6 +38,7 @@ const appRoutes: Routes = [
     HistoryListComponent,
     OccasionItemComponent,
     HistoryModalComponent,
+    TopGiftsComponent,
   ],
   imports: [
     BrowserModule,

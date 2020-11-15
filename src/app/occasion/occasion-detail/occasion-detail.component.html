@@ -65,7 +65,7 @@
         <td><img src="{{gift.imaginePath}}" style="max-height: 50px" alt="{{gift.giftDescription}}"></td>
         <td>
           <img src="assets/thumbUp.u3.jpg"
-               style="max-height: 20px; cursor: pointer" class="img-fluid" (click)="onAddLike(gift)">
+               style="max-height: 20px; cursor: pointer" class="img-fluid" (click)="onAddLike(gift, occasion)">
           {{gift.rating}}
         </td>
         <td class="float-right"><input type="checkbox" class="form-check-input"></td>
