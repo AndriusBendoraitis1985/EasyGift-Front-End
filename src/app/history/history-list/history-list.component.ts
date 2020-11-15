@@ -15,7 +15,7 @@ export class HistoryListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.historyService.finAll().subscribe(
+    this.historyService.getAllHistoryEntries().subscribe(
       data => {
         this.historyEntries = data;
       });

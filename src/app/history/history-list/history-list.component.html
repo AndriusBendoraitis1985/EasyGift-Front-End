@@ -12,8 +12,8 @@
   </thead>
   <tbody>
   <tr *ngFor="let historyEntry of historyEntries; let i = index">
-    <th scope="row">{{i + 1}}</th>
-    <td>{{historyEntry.userName}}</td>
+    <th >{{i + 1}}</th>
+    <td >{{historyEntry.userName}}</td>
     <td>{{historyEntry.userSurname}}</td>
     <td>{{historyEntry.historyType.toUpperCase()}}</td>
     <td>{{historyEntry.historyDate| date: 'yyyy-MM-dd'}}</td>

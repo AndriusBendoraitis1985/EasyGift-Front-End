@@ -10,17 +10,16 @@ import {OccasionService} from '../../services/occasion.service';
 export class OccasionListComponent implements OnInit {
   userNameFilter = '';
   eventTypeFilter = '';
-
   occasions: Occasion[];
 
   constructor(private occasionService: OccasionService) {
   }
 
   ngOnInit(): void {
-    this.occasionService.findAll().subscribe(
+    this.occasionService.getAllOccasions().subscribe(
       data => {
         this.occasions = data;
       });
-    console.log('Occasions data fetched');
+    console.log('from occasion list component');
   }
 }

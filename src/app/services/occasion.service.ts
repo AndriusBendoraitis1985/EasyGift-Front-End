@@ -8,13 +8,14 @@ import {Observable} from 'rxjs';
 })
 export class OccasionService {
   occasionSelection = new EventEmitter<Occasion>();
-  private readonly occasionsUrl: string;
+
+  private readonly occasionsUrl = 'http://localhost:8080/events';
 
   constructor(private http: HttpClient) {
-    this.occasionsUrl = 'http://localhost:8080/events';
   }
 
-  public findAll(): Observable<Occasion[]> {
+  public getAllOccasions(): Observable<Occasion[]> {
+    console.log('from occasion service');
     return this.http.get<Occasion[]>(this.occasionsUrl);
   }
 }

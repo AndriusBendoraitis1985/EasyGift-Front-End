@@ -22,4 +22,4 @@ export class HistoryEntry {
     this.historyDescription = historyDescription;
     this.historyImaginePath = historyImaginePath;
   }
-}
+  }

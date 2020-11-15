@@ -8,17 +8,17 @@ import {Observable} from 'rxjs';
 })
 export class HistoryService {
   selectedHistoryEntry = new EventEmitter<HistoryEntry>();
-  private readonly historyUrl: string;
+
+  private historyUrl = 'http://localhost:8080/history';
 
   constructor(private http: HttpClient) {
-    this.historyUrl = 'http://localhost:8080/history';
   }
 
-  public finAll(): Observable<HistoryEntry[]> {
+  public getAllHistoryEntries(): Observable<HistoryEntry[]> {
     return this.http.get<HistoryEntry[]>(this.historyUrl);
   }
 
-  public addNewHistoryEntry(newHistoryEntry: HistoryEntry): void {
-    // this.historyEntries.push(newHistoryEntry);
+  public addNewHistoryEntry(newHistoryEntry): Observable<HistoryEntry> {
+    return this.http.post<HistoryEntry>(this.historyUrl, newHistoryEntry);
   }
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HistoryService} from '../../services/history.service';
 import {HistoryEntry} from '../../models/history-entry.model';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-history-edit',
@@ -15,13 +16,19 @@ export class HistoryEditComponent implements OnInit {
   @ViewChild('description') descriptionInputRef;
   @ViewChild('picture') linkInputRef;
 
+  selectedHistoryEntryToEdit: HistoryEntry;
+
   constructor(private historyService: HistoryService) {
+    this.historyService.selectedHistoryEntry.subscribe(
+      (historyEntry: HistoryEntry) => {
+        this.selectedHistoryEntryToEdit = historyEntry;
+      });
   }
 
   ngOnInit(): void {
   }
 
-  onAddNewEntry() {
+  onAddNewEntry(): void {
     const name = this.nameInputRef.nativeElement.value;
     const surname = this.surnameInputRef.nativeElement.value;
     const occasion = this.occasionInputRef.nativeElement.value;
@@ -29,7 +36,8 @@ export class HistoryEditComponent implements OnInit {
     const description = this.descriptionInputRef.nativeElement.value;
     const link = this.linkInputRef.nativeElement.value;
     const newHistoryEntry = new HistoryEntry(name, surname, occasion, new Date(date), description, link);
-    this.historyService.addNewHistoryEntry(newHistoryEntry);
+    this.historyService.addNewHistoryEntry(newHistoryEntry).subscribe();
+    alert('New event added to history: ' + name + ' ' + surname + ' ' + occasion);
+    location.reload();
   }
-
 }
