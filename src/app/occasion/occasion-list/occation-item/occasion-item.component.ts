@@ -14,7 +14,7 @@ export class OccasionItemComponent implements OnInit {
   @Input()
   index: number;
 
-  constructor(private occasionService: OccasionService) {
+  constructor() {
   }
 
   ngOnInit(): void {

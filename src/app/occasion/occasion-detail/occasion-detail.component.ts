@@ -3,6 +3,8 @@ import {Occasion} from '../../models/occasion.model';
 import {OccasionService} from '../../services/occasion.service';
 import {Gift} from '../../models/gift.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {HistoryService} from '../../services/history.service';
+import {HistoryEntry} from '../../models/history-entry.model';
 
 @Component({
   selector: 'app-occasion-detail',
@@ -16,7 +18,8 @@ export class OccasionDetailComponent implements OnInit {
   constructor(
     private occasionService: OccasionService,
     private route: ActivatedRoute,
-    private router: Router) {
+    private router: Router,
+    private historyService: HistoryService) {
 
   }
 
@@ -45,6 +48,10 @@ export class OccasionDetailComponent implements OnInit {
     this.occasionService.deleteOccasionById(this.id).subscribe();
     alert('event deleted successfully!');
     this.router.navigate(['/history']);
+  }
+
+  onConfirm(gift: Gift, occasion: Occasion): void {
+    this.historyService.confirmAndBuy(gift, occasion);
   }
 
 }

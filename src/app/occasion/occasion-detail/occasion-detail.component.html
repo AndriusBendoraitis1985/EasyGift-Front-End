@@ -62,16 +62,10 @@
                  style="max-height: 20px; cursor: pointer" class="img-fluid" (click)="onAddLike(gift, occasion)">
             {{gift.rating}}
           </td>
-          <td class="float-right"><input type="checkbox" class="form-check-input"></td>
+          <td><button type="button" class="btn btn-outline-secondary" (click)="onConfirm(gift, occasion)">Confirm!</button></td>
         </tr>
         </tbody>
       </table>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-12 ">
-      <button class="btn btn-secondary">Confirm and organize</button>
     </div>
   </div>
 </div>

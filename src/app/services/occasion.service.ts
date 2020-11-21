@@ -30,7 +30,6 @@ export class OccasionService {
     return this.http.delete(this.occasionsUrl + '/' + index);
   }
 
-  // hardcoded occasion ID
   public addNewGift(occasionId: number, gift: { rating: number; imaginePath: string; giftDescription: string }): Observable<Gift> {
     return this.http.post<Gift>(this.occasionsUrl + '/' + occasionId + '/new', gift);
   }
