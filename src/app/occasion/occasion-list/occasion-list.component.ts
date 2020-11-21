@@ -21,5 +21,6 @@ export class OccasionListComponent implements OnInit {
         this.occasions = data;
       });
     console.log('from occasion list component');
+
   }
 }

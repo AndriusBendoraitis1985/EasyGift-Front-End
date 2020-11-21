@@ -1,6 +1,4 @@
-<div
-   (click)="onSelect(occasion)">
-  <div class="list-group-item text-secondary clearfix">
+  <div class="list-group-item text-secondary clearfix" style="cursor: pointer" [routerLink]="[index]">
     <div class="float-left">
       <h4 class="alert-heading">{{occasion.occasionType.toUpperCase()}}</h4>
       <p>{{occasion.userName}} {{occasion.userSurname}}</p>
@@ -11,4 +9,4 @@
        60px; max-height: 60px; padding-right: 5px">
     </span>
   </div>
-</div>
+

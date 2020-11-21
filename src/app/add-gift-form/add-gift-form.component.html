@@ -1,0 +1,33 @@
+<form (ngSubmit)="onSubmit()" #giftForm="ngForm">
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input
+      type="text"
+      class="form-control ng-untouched ng-pristine ng-invalid"
+      id="description"
+      required
+      [(ngModel)]="gift.giftDescription"
+      name="description"
+      #description="ngModel">
+    <div [hidden]="description.valid"
+         class="alert alert-danger">
+      Description is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="imagine">Imagine</label>
+    <input
+      type="text"
+      class="form-control"
+      id="imagine"
+      required
+      [(ngModel)]="gift.imaginePath"
+      name="imagine"
+      #imagine="ngModel">
+    <div [hidden]="imagine.valid"
+         class="alert alert-danger">
+      Imagine is required
+    </div>
+  </div>
+  <button type="submit" class="btn btn-secondary" [disabled]="!giftForm.form.valid">Add new Gift</button>
+</form>

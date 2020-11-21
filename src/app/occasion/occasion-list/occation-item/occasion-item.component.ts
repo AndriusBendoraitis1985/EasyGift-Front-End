@@ -11,14 +11,12 @@ export class OccasionItemComponent implements OnInit {
   @Input()
   occasion: Occasion;
 
+  @Input()
+  index: number;
+
   constructor(private occasionService: OccasionService) {
   }
 
   ngOnInit(): void {
   }
-
-  onSelect(occasion: Occasion) {
-    this.occasionService.occasionSelection.emit(occasion);
-  }
-
 }

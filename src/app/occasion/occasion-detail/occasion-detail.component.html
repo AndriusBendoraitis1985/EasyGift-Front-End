@@ -1,84 +1,77 @@
-<!--<div class="row">-->
-<!--  <div class="col-xs-12">-->
-<!--    <img-->
-<!--      *ngIf="occasion.type === 'birthday'"-->
-<!--      src="assets/birthdayLogo.jpg"-->
-<!--      alt="{{occasion.type}}"-->
-<!--      style="max-height: 100px">-->
-<!--    <img-->
-<!--      *ngIf="occasion.type === 'weddings'"-->
-<!--      src="assets/weddingsLogo.jpg"-->
-<!--      alt="{{occasion.type}}"-->
-<!--      style="max-height: 100px">-->
-<!--  </div>-->
-<!--</div>-->
-<div class="row">
-  <div class="com-xs-12 ">
-    <h1>{{occasion.occasionType.toUpperCase()}}</h1>
+<div *ngIf="occasion">
+  <div class="row">
+    <div class="com-xs-12 ">
+      <h1>{{occasion.occasionType.toUpperCase()}}</h1>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <p>{{occasion.userName}} {{occasion.userSurname}}</p>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>{{occasion.userName}} {{occasion.userSurname}}</p>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <p>{{occasion.occasionDate| date: 'yyyy-MM-dd'}}</p>
+  <div class="row">
+    <div class="col-xs-12">
+      <p>{{occasion.occasionDate| date: 'yyyy-MM-dd'}}</p>
+    </div>
   </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="btn-group">
-      <button
-        type="button"
-        class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Manage Event
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" href="#">Edit event</a>
-        <a class="dropdown-item" href="#">Delete event</a>
-        <a class="dropdown-item" href="#">Add new Gift</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="btn-group">
+        <button
+          type="button"
+          class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Manage Event
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Edit event</a>
+          <a class="dropdown-item" (click)="onDelete()" style="cursor: pointer">Delete event</a>
+          <a class="dropdown-item" (click)="onAddGift()" [routerLink]="['new']" style="cursor: pointer" >Add
+            new Gift</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="row" style="padding-top: 50px">
-</div>
-<div class="col-xs-12">
-  <h3>Gift list</h3>
-</div>
-<div class="row">
+  <div class="row">
+    <div class="com-xs-12 ">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  <div class="row" style="padding-top: 50px">
+  </div>
   <div class="col-xs-12">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th scope="col">Description</th>
-        <th scope="col">Picture</th>
-        <th scope="col">Rating</th>
-        <th scope="col">Check</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let gift of occasion.gifts">
-        <td>{{gift.giftDescription}}</td>
-        <td><img src="{{gift.imaginePath}}" style="max-height: 50px" alt="{{gift.giftDescription}}"></td>
-        <td>
-          <img src="assets/thumbUp.u3.jpg"
-               style="max-height: 20px; cursor: pointer" class="img-fluid" (click)="onAddLike(gift, occasion)">
-          {{gift.rating}}
-        </td>
-        <td class="float-right"><input type="checkbox" class="form-check-input"></td>
-      </tr>
-      </tbody>
-    </table>
+    <h3>Gift list</h3>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Description</th>
+          <th scope="col">Picture</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Check</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let gift of occasion.gifts">
+          <td>{{gift.giftDescription}}</td>
+          <td><img src="{{gift.imaginePath}}" style="max-height: 50px" alt="{{gift.giftDescription}}"></td>
+          <td>
+            <img src="assets/thumbUp.u3.jpg"
+                 style="max-height: 20px; cursor: pointer" class="img-fluid" (click)="onAddLike(gift, occasion)">
+            {{gift.rating}}
+          </td>
+          <td class="float-right"><input type="checkbox" class="form-check-input"></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 ">
+      <button class="btn btn-secondary">Confirm and organize</button>
+    </div>
   </div>
 </div>
-
-<div class="row">
-  <div class="col-xs-12 ">
-    <button class="btn btn-secondary">Confirm and organize</button>
-  </div>
-</div>
-
 
