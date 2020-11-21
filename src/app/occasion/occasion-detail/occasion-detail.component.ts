@@ -47,8 +47,4 @@ export class OccasionDetailComponent implements OnInit {
     this.router.navigate(['/history']);
   }
 
-  onAddGift(): void {
-    this.occasionService.occasionIdSelected.emit(this.id);
-  }
-
 }

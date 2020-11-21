@@ -11,9 +11,8 @@ const appRoutes: Routes = [
   {path: '', redirectTo: '/events', pathMatch: 'full'},
   {path: 'events', component: OccasionComponent, children: [
       {path: '', component: OccasionStartComponent},
-      {path: ':id', component: OccasionDetailComponent, children: [
-          {path: 'new', component: AddGiftFormComponent}
-        ]},
+      {path: ':id', component: OccasionDetailComponent},
+      {path: ':id/new', component: AddGiftFormComponent},
     ]
   },
   {path: 'history', component: HistoryComponent},

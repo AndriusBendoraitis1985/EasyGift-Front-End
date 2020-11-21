@@ -8,8 +8,6 @@ import {Gift} from '../models/gift.model';
   providedIn: 'root'
 })
 export class OccasionService {
-  occasionIdSelected = new EventEmitter<number>();
-
   private readonly occasionsUrl = 'http://localhost:8080/events';
 
   constructor(private http: HttpClient) {
@@ -34,7 +32,7 @@ export class OccasionService {
 
   // hardcoded occasion ID
   public addNewGift(occasionId: number, gift: { rating: number; imaginePath: string; giftDescription: string }): Observable<Gift> {
-    return this.http.post<Gift>(this.occasionsUrl + '/' + 1 + '/new', gift);
+    return this.http.post<Gift>(this.occasionsUrl + '/' + occasionId + '/new', gift);
   }
 
 
