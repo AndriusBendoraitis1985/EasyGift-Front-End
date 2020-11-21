@@ -31,7 +31,7 @@ export class OccasionService {
   }
 
   public addNewGift(occasionId: number, gift: { rating: number; imaginePath: string; giftDescription: string }): Observable<Gift> {
-    return this.http.post<Gift>(this.occasionsUrl + '/' + occasionId + '/new', gift);
+   return this.http.post<Gift>(this.occasionsUrl + '/' + occasionId + '/new', gift);
   }
 
 

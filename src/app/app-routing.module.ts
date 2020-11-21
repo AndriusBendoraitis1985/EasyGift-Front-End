@@ -6,9 +6,11 @@ import {TopGiftsComponent} from './top-gifts/top-gifts.component';
 import {OccasionDetailComponent} from './occasion/occasion-detail/occasion-detail.component';
 import {OccasionStartComponent} from './occasion/occasion-start/occasion-start.component';
 import {AddGiftFormComponent} from './add-gift-form/add-gift-form.component';
+import {HomeComponent} from './home/home.component';
 
 const appRoutes: Routes = [
-  {path: '', redirectTo: '/events', pathMatch: 'full'},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'events', component: OccasionComponent, children: [
       {path: '', component: OccasionStartComponent},
       {path: ':id', component: OccasionDetailComponent},

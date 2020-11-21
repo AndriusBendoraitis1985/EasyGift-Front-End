@@ -18,6 +18,7 @@ import { TopGiftsComponent } from './top-gifts/top-gifts.component';
 import {AppRoutingModule} from './app-routing.module';
 import { OccasionStartComponent } from './occasion/occasion-start/occasion-start.component';
 import { AddGiftFormComponent } from './add-gift-form/add-gift-form.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -38,6 +39,7 @@ import { AddGiftFormComponent } from './add-gift-form/add-gift-form.component';
     TopGiftsComponent,
     OccasionStartComponent,
     AddGiftFormComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

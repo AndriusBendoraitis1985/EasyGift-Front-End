@@ -1,6 +1,11 @@
-<div class="col">
+<div class="row">
   <div class="col">
-    <button class="btn btn-secondary">New Event</button>
+    <label class="font-weight-bold"> Filter by User name</label>
+    <input type="text" class="form-control" [(ngModel)]="userNameFilter">
+  </div>
+  <div class="col">
+    <label class="font-weight-bold"> Filter by Type</label>
+    <input type="text" class="form-control" [(ngModel)]="eventTypeFilter">
   </div>
 </div>
 <hr>
@@ -16,13 +21,8 @@
   </div>
 </div>
 <hr>
-<div class="row">
-  <div class="col">
-    <label> Filter by User name</label>
-    <input type="text" class="form-control" [(ngModel)]="userNameFilter">
-  </div>
-  <div class="col">
-    <label> Filter by Type</label>
-    <input type="text" class="form-control" [(ngModel)]="eventTypeFilter">
-  </div>
+<div class="col">
+  <button class="btn btn-secondary disabled" >New Event</button>
 </div>
+<br>
+<br>

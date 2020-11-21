@@ -36,7 +36,7 @@ export class HistoryService {
 
     this.newHistoryEntry = new HistoryEntry(name, surname, type, date, description, imagine);
     this.addNewHistoryEntry(this.newHistoryEntry).subscribe();
-    this.router.navigate(['history']);
+    this.router.navigate(['history']).then(r => location.reload());
   }
 
 }

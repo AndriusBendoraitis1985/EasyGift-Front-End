@@ -24,7 +24,7 @@ export class AddGiftFormComponent implements OnInit {
   onSubmit(): void {
     console.log(this.gift);
     this.occasionService.addNewGift(this.occasionId, this.gift).subscribe();
-    this.router.navigate(['../']);
-
+    this.router.navigate(['../']).then(r => location.reload());
+    alert('New gift added');
   }
 }
