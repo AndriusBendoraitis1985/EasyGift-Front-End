@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, EventEmitter} from '@angular/core';
 import {Occasion} from '../../../models/occasion.model';
 import {OccasionService} from '../../../services/occasion.service';
 
@@ -11,10 +11,7 @@ export class OccasionItemComponent implements OnInit {
   @Input()
   occasion: Occasion;
 
-  @Input()
-  index: number;
-
-  constructor() {
+  constructor(private occasionService: OccasionService) {
   }
 
   ngOnInit(): void {

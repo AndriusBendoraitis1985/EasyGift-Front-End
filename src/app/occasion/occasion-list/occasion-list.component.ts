@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, DoCheck, EventEmitter, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {Occasion} from '../../models/occasion.model';
 import {OccasionService} from '../../services/occasion.service';
 
@@ -7,7 +7,7 @@ import {OccasionService} from '../../services/occasion.service';
   templateUrl: './occasion-list.component.html',
   styleUrls: ['./occasion-list.component.css']
 })
-export class OccasionListComponent implements OnInit {
+export class OccasionListComponent implements OnInit{
   userNameFilter = '';
   eventTypeFilter = '';
   occasions: Occasion[];
@@ -21,6 +21,7 @@ export class OccasionListComponent implements OnInit {
         this.occasions = data;
       });
     console.log('from occasion list component');
-
   }
 }
+
+

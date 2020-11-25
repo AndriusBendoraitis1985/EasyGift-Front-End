@@ -15,7 +15,7 @@
       <ng-container
         *ngIf="(userNameFilter.toUpperCase()===occasion.userName.toUpperCase()||userNameFilter==='')
     &&(eventTypeFilter.toUpperCase()===occasion.occasionType.toUpperCase()||eventTypeFilter==='')">
-        <app-occasion-item [occasion]="occasion" [index]="occasion.occasionId"></app-occasion-item>
+        <app-occasion-item [occasion]="occasion"></app-occasion-item>
       </ng-container>
     </div>
   </div>

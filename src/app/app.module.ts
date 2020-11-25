@@ -16,9 +16,10 @@ import {OccasionItemComponent} from './occasion/occasion-list/occation-item/occa
 import {HistoryModalComponent} from './history/history-list/history-modal/history-modal.component';
 import { TopGiftsComponent } from './top-gifts/top-gifts.component';
 import {AppRoutingModule} from './app-routing.module';
-import { OccasionStartComponent } from './occasion/occasion-start/occasion-start.component';
-import { AddGiftFormComponent } from './add-gift-form/add-gift-form.component';
+import { NoOccationSelectedComponent } from './occasion/occasion-start/no-occation-selected.component';
+import { AddGiftFormComponent } from './forms/add-gift-form/add-gift-form.component';
 import { HomeComponent } from './home/home.component';
+import { EditOccasionFormComponent } from './forms/edit-occasion-form/edit-occasion-form.component';
 
 
 
@@ -37,9 +38,10 @@ import { HomeComponent } from './home/home.component';
     OccasionItemComponent,
     HistoryModalComponent,
     TopGiftsComponent,
-    OccasionStartComponent,
+    NoOccationSelectedComponent,
     AddGiftFormComponent,
     HomeComponent,
+    EditOccasionFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -4,17 +4,19 @@ import {OccasionComponent} from './occasion/occasion.component';
 import {HistoryComponent} from './history/history.component';
 import {TopGiftsComponent} from './top-gifts/top-gifts.component';
 import {OccasionDetailComponent} from './occasion/occasion-detail/occasion-detail.component';
-import {OccasionStartComponent} from './occasion/occasion-start/occasion-start.component';
-import {AddGiftFormComponent} from './add-gift-form/add-gift-form.component';
+import {NoOccationSelectedComponent} from './occasion/occasion-start/no-occation-selected.component';
+import {AddGiftFormComponent} from './forms/add-gift-form/add-gift-form.component';
 import {HomeComponent} from './home/home.component';
+import {EditOccasionFormComponent} from './forms/edit-occasion-form/edit-occasion-form.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'events', component: OccasionComponent, children: [
-      {path: '', component: OccasionStartComponent},
+      {path: '', component: NoOccationSelectedComponent},
       {path: ':id', component: OccasionDetailComponent},
       {path: ':id/new', component: AddGiftFormComponent},
+      {path: ':id/edit', component: EditOccasionFormComponent},
     ]
   },
   {path: 'history', component: HistoryComponent},

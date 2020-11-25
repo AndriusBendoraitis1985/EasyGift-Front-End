@@ -1,3 +1,9 @@
 button {
-  margin: 5px;
+  margin: 3px;
+  font-size: 15px;
+  padding: 3px;
+}
+img {
+  max-width: 70px;
+  max-height: 70px;
 }

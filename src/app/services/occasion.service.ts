@@ -31,10 +31,12 @@ export class OccasionService {
   }
 
   public addNewGift(occasionId: number, gift: { rating: number; imaginePath: string; giftDescription: string }): Observable<Gift> {
-   return this.http.post<Gift>(this.occasionsUrl + '/' + occasionId + '/new', gift);
+    return this.http.post<Gift>(this.occasionsUrl + '/' + occasionId + '/new', gift);
   }
 
-
+  public updateOccasion(occasion: Occasion): Observable<Occasion> {
+    return this.http.put<Occasion>(this.occasionsUrl + '/' + occasion.occasionId + '/edit', occasion);
+  }
 }
 
 

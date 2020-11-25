@@ -1,9 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Gift} from '../models/gift.model';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {GiftService} from '../services/gift.service';
-import {OccasionService} from '../services/occasion.service';
-import {Occasion} from '../models/occasion.model';
+import {OccasionService} from '../../services/occasion.service';
 
 @Component({
   selector: 'app-add-gift-form',
@@ -12,6 +9,7 @@ import {Occasion} from '../models/occasion.model';
 })
 export class AddGiftFormComponent implements OnInit {
   gift = {giftDescription: '', imaginePath: '', rating: 0};
+  // gift: Gift;
   occasionId: number;
 
   constructor(private router: Router, private occasionService: OccasionService, private route: ActivatedRoute) {
@@ -23,8 +21,7 @@ export class AddGiftFormComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.gift);
-    this.occasionService.addNewGift(this.occasionId, this.gift).subscribe();
-    this.router.navigate(['../']).then(r => location.reload());
+    this.occasionService.addNewGift(this.occasionId, this.gift).subscribe(result => this.router.navigate(['events/' + this.occasionId]));
     alert('New gift added');
   }
 }

@@ -9,3 +9,8 @@ h4 {
   margin-bottom: 5px;
   border: lightgrey 1px solid;
 }
+img{
+  max-height: 50px;
+  max-width: 50px;
+  padding-right: 5px;
+}
