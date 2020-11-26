@@ -28,7 +28,7 @@ export class OccasionService {
 
   public deleteOccasionById(index: number): any {
     return this.http.delete(this.occasionsUrl + '/' + index);
-  }
+     }
 
   public addNewGift(occasionId: number, gift: { rating: number; imaginePath: string; giftDescription: string }): Observable<Gift> {
     return this.http.post<Gift>(this.occasionsUrl + '/' + occasionId + '/new', gift);

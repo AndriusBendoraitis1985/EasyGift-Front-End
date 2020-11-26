@@ -35,8 +35,7 @@ export class OccasionDetailComponent implements OnInit {
         );
       }
     );
- }
-
+  }
 
   onAddLike(gift: Gift, occasion: Occasion): void {
     gift.rating++;
@@ -45,7 +44,9 @@ export class OccasionDetailComponent implements OnInit {
   }
 
   onDelete(): void {
-    this.occasionService.deleteOccasionById(this.occasion.occasionId).subscribe(result => this.router.navigate(['../events']));
+    this.occasionService.deleteOccasionById(this.occasion.occasionId).subscribe(result => {
+      this.router.navigate(['../events']).then(r => location.reload());
+    });
     alert('event deleted successfully!');
   }
 

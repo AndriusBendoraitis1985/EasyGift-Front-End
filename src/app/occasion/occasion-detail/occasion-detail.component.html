@@ -1,78 +1,80 @@
 <div *ngIf="occasion">
   <div class="row">
-    <div class="col-xs-10" style="width: 400px">
-      <h1>{{occasion.occasionType.toUpperCase()}}</h1>
-      <h4>{{occasion.userName}} {{occasion.userSurname}}</h4>
+    <div class="col-7" style="width: 400px">
+      <h1>{{occasion.userName}} {{occasion.userSurname}}</h1>
+      <h4>{{occasion.occasionType.toUpperCase()}}</h4>
       <p>{{occasion.occasionDate| date: 'yyyy-MM-dd'}}</p>
     </div>
-    <div class="col-xs-2">
-      <img src="/assets/birthdayLogo.jpg" alt="{{occasion.userName}}">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="btn-group">
-            <button
-              type="button"
-              class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              Manage Event
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" [routerLink]="['edit']" style="cursor: pointer">Edit event</a>
-              <a class="dropdown-item" (click)="onDelete()" style="cursor: pointer">Delete event</a>
-              <a class="dropdown-item" [routerLink]="['new']" style="cursor:
+    <div class="col-5">
+      <img src="/assets/HomerSimpson.jpg" alt="{{occasion.userName}}" class="usersLogo">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="btn-group">
+        <button
+          type="button"
+          class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Manage Event
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" [routerLink]="['edit']" style="cursor: pointer">Edit event</a>
+          <a class="dropdown-item" (click)="onDelete()" style="cursor: pointer">Delete event</a>
+          <a class="dropdown-item" [routerLink]="['new']" style="cursor:
           pointer">Add
-                new Gift</a>
-            </div>
-          </div>
+            new Gift</a>
         </div>
       </div>
     </div>
   </div>
   <div class="row" style="margin-top: 50px">
-    <h3>Gift list</h3>
-  </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <table class="table table-striped">
-        <thead>
-        <tr>
-          <th scope="col">Description</th>
-          <th scope="col">Picture</th>
-          <th scope="col">Rating</th>
-          <th scope="col">Action</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let gift of occasion.gifts">
-          <td style="width: 250px">{{gift.giftDescription}}</td>
-          <td><img src="{{gift.imaginePath}}" alt="{{gift.giftDescription}}"></td>
-          <td>
-            <img src="assets/thumbUp.u3.jpg"
-                 style="max-height: 20px; cursor: pointer" class="img-fluid" (click)="onAddLike(gift, occasion)">
-            {{gift.rating}}
-          </td>
-          <td>
-            <div class="row">
-              <div class="btn-group">
-                <button
-                  type="button"
-                  class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="false">
-                  Manage
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#" style="cursor:pointer">Confirm as single</a>
-                  <a class="dropdown-item" href="#" style="cursor:pointer">Confirm as multi</a>
-                  <a class="dropdown-item" href="#" style="cursor: pointer">Edit</a>
-                  <a class="dropdown-item" href="#" style="cursor: pointer">Delete</a>
-                </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="col-10">
+      <h3>Gift list</h3>
     </div>
   </div>
-</div>
+    <div class="row">
+      <div class="col-10">
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">Description</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Rating</th>
+            <th scope="col">Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let gift of occasion.gifts">
+            <td style="width: 250px">{{gift.giftDescription}}</td>
+            <td><img src="{{gift.imaginePath}}" alt="{{gift.giftDescription}}" class="imagineFromList"></td>
+            <td>
+              <img src="assets/thumbUp.u3.jpg"
+                   style="max-height: 20px; cursor: pointer" class="img-fluid" (click)="onAddLike(gift, occasion)">
+              {{gift.rating}}
+            </td>
+            <td>
+              <div class="row">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Manage
+                  </button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#" style="cursor:pointer">Confirm as single</a>
+                    <a class="dropdown-item" href="#" style="cursor:pointer">Confirm as multi</a>
+                    <a class="dropdown-item" href="#" style="cursor: pointer">Edit</a>
+                    <a class="dropdown-item" href="#" style="cursor: pointer">Delete</a>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
 

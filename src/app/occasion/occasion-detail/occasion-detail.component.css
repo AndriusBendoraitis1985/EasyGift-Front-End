@@ -3,7 +3,14 @@ button {
   font-size: 15px;
   padding: 3px;
 }
-img {
+.imagineFromList {
   max-width: 70px;
   max-height: 70px;
+}
+
+.usersLogo{
+  max-height: 100px;
+  margin: 10px;
+  border: darkgrey 1px solid;
+  border-radius: 10px;
 }

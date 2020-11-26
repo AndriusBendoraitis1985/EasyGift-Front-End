@@ -20,6 +20,7 @@ import { NoOccationSelectedComponent } from './occasion/occasion-start/no-occati
 import { AddGiftFormComponent } from './forms/add-gift-form/add-gift-form.component';
 import { HomeComponent } from './home/home.component';
 import { EditOccasionFormComponent } from './forms/edit-occasion-form/edit-occasion-form.component';
+import { AddOccasionFormComponent } from './forms/add-occasion-form/add-occasion-form.component';
 
 
 
@@ -42,6 +43,7 @@ import { EditOccasionFormComponent } from './forms/edit-occasion-form/edit-occas
     AddGiftFormComponent,
     HomeComponent,
     EditOccasionFormComponent,
+    AddOccasionFormComponent,
   ],
   imports: [
     BrowserModule,
