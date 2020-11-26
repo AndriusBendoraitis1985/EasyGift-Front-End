@@ -1,1 +1,76 @@
-<p>add-occasion-form works!</p>
+<h4>Add Event</h4>
+<form (ngSubmit)="onSubmit()" #giftForm="ngForm" style="width: 400px">
+  <div class="form-group row">
+    <label for="name" class="col-sm-4 col-form-label">User name</label>
+    <div class="col-sm-8">
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        required
+        [(ngModel)]="occasion.userName"
+        name="name"
+        #name="ngModel">
+      <div [hidden]="name.valid"
+           class="alert alert-danger">
+        User name is required
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="surname" class="col-sm-4 col-form-label">User surname</label>
+    <div class="col-sm-8">
+      <input
+        type="text"
+        class="form-control"
+        id="surname"
+        required
+        [(ngModel)]="occasion.userSurname"
+        name="surname"
+        #surname="ngModel">
+      <div [hidden]="surname.valid"
+           class="alert alert-danger">
+        User surname is required
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="type" class="col-sm-4 col-form-label">Event Type</label>
+    <div class="col-sm-8">
+      <select
+        class="form-control ng-untouched ng-pristine ng-invalid"
+        id="type"
+        required
+        [(ngModel)]="occasion.occasionType"
+        name="type"
+        #type="ngModel">
+        <option>birthday</option>
+        <option>christmas</option>
+        <option>weddings</option>
+      </select>
+      <div [hidden]="type.valid"
+           class="alert alert-danger">
+        Event type is required
+      </div>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="date" class="col-sm-4 col-form-label">Event Date</label>
+    <div class="col-sm-8">
+      <input
+        type="date"
+        class="form-control"
+        id="date"
+        required
+        [(ngModel)]="occasion.occasionDate"
+        name="date"
+        #date="ngModel">
+      <div [hidden]="date.valid"
+           class="alert alert-danger">
+        Date is required
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-secondary" [disabled]="!giftForm.form.valid">Submit</button>
+  <button type="button" class="btn btn-secondary" [disabled]="!giftForm.form.valid">Submit and add gifts</button>
+</form>
