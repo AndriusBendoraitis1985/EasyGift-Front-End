@@ -9,6 +9,7 @@ import {AddGiftFormComponent} from './forms/add-gift-form/add-gift-form.componen
 import {HomeComponent} from './home/home.component';
 import {EditOccasionFormComponent} from './forms/edit-occasion-form/edit-occasion-form.component';
 import {AddOccasionFormComponent} from './forms/add-occasion-form/add-occasion-form.component';
+import {EditGiftFormComponent} from './forms/edit-gift-form/edit-gift-form.component';
 
 const appRoutes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
       {path: '', component: NoOccationSelectedComponent},
       {path: 'new', component: AddOccasionFormComponent},
       {path: ':id', component: OccasionDetailComponent},
-      {path: ':id/new', component: AddGiftFormComponent},
+      {path: ':id/newGift', component: AddGiftFormComponent},
+      {path: ':id/editGift/:giftId', component: EditGiftFormComponent},
       {path: ':id/edit', component: EditOccasionFormComponent},
     ]
   },

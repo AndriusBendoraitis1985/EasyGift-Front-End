@@ -20,8 +20,9 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" [routerLink]="['edit']" style="cursor: pointer">Edit event</a>
-          <a class="dropdown-item bg-danger" (click)="onDelete('event deleted successfully!')" style="cursor: pointer">Delete event</a>
-          <a class="dropdown-item" [routerLink]="['new']" style="cursor:
+          <a class="dropdown-item bg-danger" style="cursor: pointer"
+             (click)="onDeleteOccasion('Event deleted successfully!')">Delete event</a>
+          <a class="dropdown-item" [routerLink]="['newGift']" style="cursor:
           pointer">Add
             new Gift</a>
         </div>
@@ -65,8 +66,8 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                   <a class="dropdown-item" style="cursor:pointer" (click)="onConfirmSingle(gift, occasion)">Confirm as single</a>
                   <a class="dropdown-item" style="cursor:pointer" (click)="onConfirmMulti(gift, occasion)">Confirm as multi</a>
-                  <a class="dropdown-item" style="cursor: pointer">Edit</a>
-                  <a class="dropdown-item bg-danger" style="cursor: pointer" >Delete</a>
+                  <a class="dropdown-item" style="cursor: pointer" [routerLink]="['editGift/'+gift.giftId]">Edit</a>
+                  <a class="dropdown-item bg-danger" style="cursor: pointer" (click)="onDeleteGift(gift.giftId)">Delete</a>
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, EventEmitter} from '@angular/core';
 import {Occasion} from '../../models/occasion.model';
 import {OccasionService} from '../../services/occasion.service';
 import {Gift} from '../../models/gift.model';
@@ -45,9 +45,9 @@ export class OccasionDetailComponent implements OnInit {
     console.log('giftId: ' + gift.giftId + ' occasionId: ' + occasion.occasionId);
   }
 
-  onDelete(msg: string): void {
+  onDeleteOccasion(msg: string): void {
     this.occasionService.deleteOccasionById(this.occasion.occasionId).subscribe(result => {
-      if (msg === 'Multi gift confirmed!') {
+      if (msg !== 'Single gift confirmed!') {
         this.router.navigate(['../events']).then(r => location.reload());
       }
     });
@@ -62,6 +62,11 @@ export class OccasionDetailComponent implements OnInit {
 
   onConfirmSingle(gift: Gift, occasion: Occasion): void {
     this.historyService.confirmAndBuy(gift, occasion);
-    this.onDelete('Single gift confirmed!');
+    this.onDeleteOccasion('Single gift confirmed!');
+  }
+
+  onDeleteGift(giftId: number): void {
+    this.giftService.deleteGiftById(giftId).subscribe((result => this.ngOnInit()));
+    alert('Gift deleted successfully!');
   }
 }
