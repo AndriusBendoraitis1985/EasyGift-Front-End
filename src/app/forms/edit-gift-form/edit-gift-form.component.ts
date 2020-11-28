@@ -38,6 +38,7 @@ export class EditGiftFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    this.giftToUpdate.rating = 0;
     this.giftService.updateGift(this.giftToUpdate).subscribe(
       result => this.router.navigate(['events/' + this.occasion.occasionId]).then(r => location.reload()));
     alert('Gift data changed! \nRating was set to 0!');

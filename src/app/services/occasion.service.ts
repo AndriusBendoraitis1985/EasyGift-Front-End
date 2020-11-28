@@ -18,10 +18,6 @@ export class OccasionService {
     return this.http.get<Occasion[]>(this.occasionsUrl);
   }
 
-  public addLike(giftId: number, occasion: Occasion): Observable<Gift> {
-    return this.http.put<Gift>(this.occasionsUrl + '/gifts/' + giftId, occasion);
-  }
-
   public getOccasionById(index: number): Observable<Occasion> {
     return this.http.get<Occasion>(this.occasionsUrl + '/' + index);
   }

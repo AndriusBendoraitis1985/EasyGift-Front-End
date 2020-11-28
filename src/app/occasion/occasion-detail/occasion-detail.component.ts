@@ -39,10 +39,9 @@ export class OccasionDetailComponent implements OnInit {
     );
   }
 
-  onAddLike(gift: Gift, occasion: Occasion): void {
+  onAddLike(gift: Gift): void {
     gift.rating++;
-    this.occasionService.addLike(gift.giftId, occasion).subscribe();
-    console.log('giftId: ' + gift.giftId + ' occasionId: ' + occasion.occasionId);
+    this.giftService.updateGift(gift).subscribe((result => this.ngOnInit()));
   }
 
   onDeleteOccasion(msg: string): void {

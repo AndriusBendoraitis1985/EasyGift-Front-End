@@ -23,7 +23,7 @@ export class AddOccasionFormComponent implements OnInit {
     this.occasionService.createOccasion(this.occasion)
       .subscribe((data: Occasion) => {
         this.lastOccasionId = data.occasionId;
-        this.router.navigate(['../events/' + this.lastOccasionId + '/new']).then(r => location.reload());
+        this.router.navigate(['../events/' + this.lastOccasionId + '/newGift']).then(r => location.reload());
       });
   }
 
