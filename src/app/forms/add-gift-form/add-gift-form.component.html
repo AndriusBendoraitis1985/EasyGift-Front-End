@@ -1,8 +1,8 @@
 <div class="row">
-  <div class ="col-sm-4">
+  <div class="col-sm-4">
     <h4>Add new Gift to:</h4>
   </div>
-  <div class ="col-sm-8 text-secondary" *ngIf="occasion" style="margin-top: 20px; margin-bottom: 20px" >
+  <div class="col-sm-8 text-secondary" *ngIf="occasion" style="margin-top: 20px; margin-bottom: 20px">
     <div>{{occasion.userName}} {{occasion.userSurname}}</div>
     <div>{{occasion.occasionType.toUpperCase()}}</div>
     <div>{{occasion.occasionDate| date: 'yyyy-MM-dd'}}</div>
@@ -44,4 +44,7 @@
     </div>
   </div>
   <button type="submit" class="btn btn-secondary" [disabled]="!giftForm.form.valid">Add new Gift</button>
+  <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel
+  </button>
+
 </form>

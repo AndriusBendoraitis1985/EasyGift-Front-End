@@ -1,4 +1,8 @@
 <div class="row">
+    <button class="btn btn-secondary badge-success" [routerLink]="['new']">New Event</button>
+    <button class="btn btn-outline-secondary" (click)="showFilter=!showFilter">Show Filter</button>
+</div>
+<div class="row" *ngIf="showFilter">
   <div class="col">
     <label class="font-weight-bold"> Filter by User name</label>
     <input type="text" class="form-control" [(ngModel)]="userNameFilter">
@@ -7,6 +11,7 @@
     <label class="font-weight-bold"> Filter by Type</label>
     <input type="text" class="form-control" [(ngModel)]="eventTypeFilter">
   </div>
+
 </div>
 <hr>
 <div class="row">
@@ -21,8 +26,5 @@
   </div>
 </div>
 <hr>
-<div class="col">
-  <button class="btn btn-secondary" [routerLink]="['new']">New Event</button>
-</div>
 <br>
 <br>

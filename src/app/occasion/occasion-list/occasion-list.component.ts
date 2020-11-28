@@ -11,6 +11,7 @@ export class OccasionListComponent implements OnInit{
   userNameFilter = '';
   eventTypeFilter = '';
   occasions: Occasion[];
+  showFilter = false;
 
   constructor(private occasionService: OccasionService) {
   }

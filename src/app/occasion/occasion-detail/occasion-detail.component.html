@@ -20,7 +20,7 @@
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" [routerLink]="['edit']" style="cursor: pointer">Edit event</a>
-          <a class="dropdown-item" (click)="onDelete()" style="cursor: pointer">Delete event</a>
+          <a class="dropdown-item bg-danger" (click)="onDelete('event deleted successfully!')" style="cursor: pointer">Delete event</a>
           <a class="dropdown-item" [routerLink]="['new']" style="cursor:
           pointer">Add
             new Gift</a>
@@ -63,10 +63,10 @@
                   Manage
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#" style="cursor:pointer">Confirm as single</a>
-                  <a class="dropdown-item" href="#" style="cursor:pointer">Confirm as multi</a>
-                  <a class="dropdown-item" href="#" style="cursor: pointer">Edit</a>
-                  <a class="dropdown-item" href="#" style="cursor: pointer">Delete</a>
+                  <a class="dropdown-item" style="cursor:pointer" (click)="onConfirmSingle(gift, occasion)">Confirm as single</a>
+                  <a class="dropdown-item" style="cursor:pointer" (click)="onConfirmMulti(gift, occasion)">Confirm as multi</a>
+                  <a class="dropdown-item" style="cursor: pointer">Edit</a>
+                  <a class="dropdown-item bg-danger" style="cursor: pointer" >Delete</a>
                 </div>
               </div>
             </div>

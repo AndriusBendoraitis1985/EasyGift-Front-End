@@ -4,6 +4,7 @@ import {OccasionService} from '../../services/occasion.service';
 import {Gift} from '../../models/gift.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {HistoryService} from '../../services/history.service';
+import {GiftService} from '../../services/gift.service';
 
 @Component({
   selector: 'app-occasion-detail',
@@ -16,6 +17,7 @@ export class OccasionDetailComponent implements OnInit {
 
   constructor(
     private occasionService: OccasionService,
+    private giftService: GiftService,
     private route: ActivatedRoute,
     private router: Router,
     private historyService: HistoryService) {
@@ -43,15 +45,23 @@ export class OccasionDetailComponent implements OnInit {
     console.log('giftId: ' + gift.giftId + ' occasionId: ' + occasion.occasionId);
   }
 
-  onDelete(): void {
+  onDelete(msg: string): void {
     this.occasionService.deleteOccasionById(this.occasion.occasionId).subscribe(result => {
-      this.router.navigate(['../events']).then(r => location.reload());
+      if (msg === 'Multi gift confirmed!') {
+        this.router.navigate(['../events']).then(r => location.reload());
+      }
     });
-    alert('event deleted successfully!');
+    alert(msg);
   }
 
-  onConfirm(gift: Gift, occasion: Occasion): void {
+  onConfirmMulti(gift: Gift, occasion: Occasion): void {
     this.historyService.confirmAndBuy(gift, occasion);
+    this.giftService.deleteGiftById(gift.giftId).subscribe();
+    alert('Multi gift confirmed!');
   }
 
+  onConfirmSingle(gift: Gift, occasion: Occasion): void {
+    this.historyService.confirmAndBuy(gift, occasion);
+    this.onDelete('Single gift confirmed!');
+  }
 }

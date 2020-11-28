@@ -29,4 +29,8 @@ export class AddGiftFormComponent implements OnInit {
       result => this.router.navigate(['events/' + this.occasionId]).then(r => location.reload()));
     alert('New gift added');
   }
+
+  onCancel(): void {
+    this.router.navigate(['../events/' + this.occasionId]);
+  }
 }

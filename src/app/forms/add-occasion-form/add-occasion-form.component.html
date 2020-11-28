@@ -72,5 +72,5 @@
     </div>
   </div>
   <button type="submit" class="btn btn-secondary" [disabled]="!giftForm.form.valid">Submit</button>
-  <button type="button" class="btn btn-secondary" [disabled]="!giftForm.form.valid">Submit and add gifts</button>
+  <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancel</button>
 </form>

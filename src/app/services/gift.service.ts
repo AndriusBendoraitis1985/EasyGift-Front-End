@@ -16,6 +16,8 @@ export class GiftService {
     return this.http.get<Gift[]>(this.giftsUrl);
   }
 
-
+  public deleteGiftById(index: number): Observable<Gift> {
+    return this.http.delete<Gift>(this.giftsUrl + '/' + index);
+  }
 
 }

@@ -35,8 +35,7 @@ export class HistoryService {
     const imagine = gift.imaginePath;
 
     this.newHistoryEntry = new HistoryEntry(name, surname, type, date, description, imagine);
-    this.addNewHistoryEntry(this.newHistoryEntry).subscribe();
-    this.router.navigate(['history']).then(r => location.reload());
+    this.addNewHistoryEntry(this.newHistoryEntry).subscribe(result =>  this.router.navigate(['history']));
   }
 
 }

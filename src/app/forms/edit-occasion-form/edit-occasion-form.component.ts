@@ -30,6 +30,9 @@ export class EditOccasionFormComponent implements OnInit {
   onSubmit(): void {
     this.occasionService.updateOccasion(this.occasion)
       .subscribe(result => this.router.navigate(['../events/' + this.occasion.occasionId]).then(r => location.reload()));
-    console.log('edit: ' + this.occasion);
+  }
+
+  onCancel(): void {
+    this.router.navigate(['../events/' + this.occasion.occasionId]);
   }
 }
