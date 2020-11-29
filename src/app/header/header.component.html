@@ -2,16 +2,21 @@
   <a class="navbar-brand" href="#"><img
     src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTJ82i9Msb2f8dK565fpQQou6SU-WnFBfiBIQ&usqp=CAU"
     style="max-height: 25px"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
+    <div class="navbar-nav mr-auto">
       <a class="nav-link" routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home
       </a>
+      <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
       <a class="nav-link" routerLink="/events" routerLinkActive="active">Events</a>
       <a class="nav-link" routerLink="/history" routerLinkActive="active">History</a>
       <a class="nav-link" routerLink="/gifts" routerLinkActive="active">Top Gifts</a>
     </div>
+    <span class="navbar-text">
+      User: Homer
+    </span>
   </div>
 </nav>

@@ -1,4 +1,4 @@
-import {Injectable, EventEmitter} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Occasion} from '../models/occasion.model';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';

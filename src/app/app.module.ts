@@ -22,9 +22,13 @@ import { HomeComponent } from './home/home.component';
 import { EditOccasionFormComponent } from './forms/edit-occasion-form/edit-occasion-form.component';
 import { AddOccasionFormComponent } from './forms/add-occasion-form/add-occasion-form.component';
 import { EditGiftFormComponent } from './forms/edit-gift-form/edit-gift-form.component';
-
-
-
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { UserOccasionListComponent } from './dashboard/user-occasion-list/user-occasion-list.component';
+import { UserResponsibleListComponent } from './dashboard/user-responsible-list/user-responsible-list.component';
+import { UserResponsibleItemComponent } from './dashboard/user-responsible-list/user-responsible-item/user-responsible-item.component';
+import { UserOccasionItemComponent } from './dashboard/user-occasion-list/user-occasion-item/user-occasion-item.component';
+import { UpcomingOccasionListComponent } from './dashboard/upcoming-occasion-list/upcoming-occasion-list.component';
+import { UpcomingOccationItemComponent } from './dashboard/upcoming-occasion-list/upcoming-occation-item/upcoming-occation-item.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +50,13 @@ import { EditGiftFormComponent } from './forms/edit-gift-form/edit-gift-form.com
     EditOccasionFormComponent,
     AddOccasionFormComponent,
     EditGiftFormComponent,
+    DashboardComponent,
+    UserOccasionListComponent,
+    UserResponsibleListComponent,
+    UserResponsibleItemComponent,
+    UserOccasionItemComponent,
+    UpcomingOccasionListComponent,
+    UpcomingOccationItemComponent,
   ],
   imports: [
     BrowserModule,
