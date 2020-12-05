@@ -31,6 +31,6 @@ export class AddGiftFormComponent implements OnInit {
   }
 
   onCancel(): void {
-    this.router.navigate(['../events/' + this.occasionId]);
+    this.router.navigate(['events/' + this.occasionId]);
   }
 }

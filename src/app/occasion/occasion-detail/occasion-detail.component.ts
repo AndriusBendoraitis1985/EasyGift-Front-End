@@ -1,4 +1,4 @@
-import {Component, OnInit, EventEmitter} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Occasion} from '../../models/occasion.model';
 import {OccasionService} from '../../services/occasion.service';
 import {Gift} from '../../models/gift.model';
@@ -47,7 +47,7 @@ export class OccasionDetailComponent implements OnInit {
   onDeleteOccasion(msg: string): void {
     this.occasionService.deleteOccasionById(this.occasion.occasionId).subscribe(result => {
       if (msg !== 'Single gift confirmed!') {
-        this.router.navigate(['../events']).then(r => location.reload());
+        this.router.navigate(['events']).then(r => location.reload());
       }
     });
     alert(msg);

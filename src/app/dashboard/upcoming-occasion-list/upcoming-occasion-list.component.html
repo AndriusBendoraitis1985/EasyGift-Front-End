@@ -1,1 +1,12 @@
-<p>upcoming-occasion-list works!</p>
+<hr>
+<div class="row">
+  <div class="col">
+    <div *ngFor="let occasion of occasions">
+        <app-occasion-item [occasion]="occasion"></app-occasion-item>
+    </div>
+  </div>
+</div>
+<hr>
+<br>
+<br>
+

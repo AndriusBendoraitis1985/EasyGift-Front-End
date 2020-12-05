@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Occasion} from '../../models/occasion.model';
+import {OccasionService} from '../../services/occasion.service';
 
 @Component({
   selector: 'app-upcoming-occasion-list',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upcoming-occasion-list.component.css']
 })
 export class UpcomingOccasionListComponent implements OnInit {
+  occasions: Occasion[];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private occasionService: OccasionService) {
   }
 
+  ngOnInit(): void {
+    this.occasionService.getAllOccasions().subscribe(
+      (data: Occasion[]) => {
+        this.occasions = data;
+      });
+  }
 }

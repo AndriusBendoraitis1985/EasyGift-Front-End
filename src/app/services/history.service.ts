@@ -1,6 +1,6 @@
 import {Injectable, EventEmitter} from '@angular/core';
 import {HistoryEntry} from '../models/history-entry.model';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Gift} from '../models/gift.model';
 import {Occasion} from '../models/occasion.model';
@@ -13,17 +13,24 @@ export class HistoryService {
   selectedHistoryEntry = new EventEmitter<HistoryEntry>();
   newHistoryEntry: HistoryEntry;
 
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('token')
+    })
+  };
+
   private historyUrl = 'http://localhost:8080/history';
 
   constructor(private http: HttpClient, private router: Router) {
   }
 
   public getAllHistoryEntries(): Observable<HistoryEntry[]> {
-    return this.http.get<HistoryEntry[]>(this.historyUrl);
+    return this.http.get<HistoryEntry[]>(this.historyUrl, this.httpOptions);
   }
 
   public addNewHistoryEntry(newHistoryEntry): Observable<HistoryEntry> {
-    return this.http.post<HistoryEntry>(this.historyUrl, newHistoryEntry);
+    return this.http.post<HistoryEntry>(this.historyUrl, newHistoryEntry, this.httpOptions);
   }
 
   public confirmAndBuy(gift: Gift, occasion: Occasion): void {
