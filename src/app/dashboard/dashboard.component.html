@@ -1,15 +1,9 @@
 <div class="row">
-  <div class="col-md-12">
-    <div *ngIf="selectedUser" [routerLink]="selectedUser.userId" style="cursor: pointer"> Selected user:
-      {{selectedUser.userName}}
-    </div>
+  <div class="col-md-5">
+    <app-dashboard-by-user></app-dashboard-by-user>
   </div>
-</div>
-<div class="row">
-  <div class="col-md-6">
-    <router-outlet></router-outlet>
-  </div>
-  <div class="col-md-6">
+  <div class="col-md-2"></div>
+  <div class="col-md-5">
     <app-upcoming-occasion-list></app-upcoming-occasion-list>
   </div>
 </div>

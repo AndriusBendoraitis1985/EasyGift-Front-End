@@ -1,1 +1,16 @@
-<p>user-occasion-list works!</p>
+<div class="row">
+  <div class="row">
+    <h3 style="margin-left: 40px">My Events: </h3>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col">
+    <div *ngFor="let occasion of userOccasions">
+      <app-occasion-item [occasion]="occasion"></app-occasion-item>
+    </div>
+  </div>
+</div>
+<hr>
+<br>
+<br>

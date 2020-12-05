@@ -11,15 +11,11 @@ import {EditOccasionFormComponent} from './forms/edit-occasion-form/edit-occasio
 import {AddOccasionFormComponent} from './forms/add-occasion-form/add-occasion-form.component';
 import {EditGiftFormComponent} from './forms/edit-gift-form/edit-gift-form.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
-import {DashboardByUserComponent} from './dashboard/dashboard-by-user/dashboard-by-user.component';
 
 const appRoutes: Routes = [
   // {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
-  {path: 'dashboard', component: DashboardComponent, children: [
-      {path: ':id', component: DashboardByUserComponent},
-    ]
-  },
+  {path: 'dashboard', component: DashboardComponent},
   {path: 'events', component: OccasionComponent, children: [
       {path: '', component: NoOccationSelectedComponent},
       {path: 'new', component: AddOccasionFormComponent},

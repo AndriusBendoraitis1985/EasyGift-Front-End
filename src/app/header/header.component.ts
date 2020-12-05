@@ -6,16 +6,17 @@ import {Component, OnInit, EventEmitter, Output} from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Output()
-  selectedFeature = new EventEmitter<string>();
+  userName = 'non authorized';
+  userLoggedIn = false;
 
   constructor() {
   }
 
   ngOnInit(): void {
+    if (localStorage.getItem('userName')){
+      this.userName = localStorage.getItem('userName');
+      this.userLoggedIn = true;
+    }
   }
 
-  onselect(feature: string): void {
-    this.selectedFeature.emit(feature);
-  }
 }

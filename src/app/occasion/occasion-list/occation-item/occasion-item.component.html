@@ -1,12 +1,12 @@
-  <div *ngIf="occasion" class="list-group-item text-secondary clearfix" style="cursor: pointer"
-       [routerLink]="[occasion.occasionId]">
-    <div class="float-left">
-      <h4 class="alert-heading">{{occasion.occasionType.toUpperCase()}}</h4>
-      <p>{{occasion.userName}} {{occasion.userSurname}}</p>
-      <p>{{occasion.occasionDate| date: 'yyyy-MM-dd'}}</p>
-    </div>
-    <span class="float-right">
+<div *ngIf="occasion" class="list-group-item text-secondary clearfix" style="cursor: pointer"
+     [routerLink]="['../events/'+ occasion.occasionId]">
+  <div class="float-left">
+    <h4 class="alert-heading">{{occasion.occasionType.toUpperCase()}}</h4>
+    <p>{{occasion.userName}} {{occasion.userSurname}}</p>
+    <p>{{occasion.occasionDate| date: 'yyyy-MM-dd'}}</p>
+  </div>
+  <span class="float-right">
       <img *ngFor="let gift of occasion.gifts" src="{{gift.imaginePath}}" alt="{{gift.giftDescription}}">
     </span>
-  </div>
+</div>
 

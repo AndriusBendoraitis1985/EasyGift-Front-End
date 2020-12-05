@@ -26,7 +26,6 @@ import {DashboardComponent} from './dashboard/dashboard.component';
 import {UserOccasionListComponent} from './dashboard/dashboard-by-user/user-occasion-list/user-occasion-list.component';
 import {UserResponsibleListComponent} from './dashboard/dashboard-by-user/user-responsible-list/user-responsible-list.component';
 import {UserResponsibleItemComponent} from './dashboard/dashboard-by-user/user-responsible-list/user-responsible-item/user-responsible-item.component';
-import {UserOccasionItemComponent} from './dashboard/dashboard-by-user/user-occasion-list/user-occasion-item/user-occasion-item.component';
 import {UpcomingOccasionListComponent} from './dashboard/upcoming-occasion-list/upcoming-occasion-list.component';
 import {UpcomingOccationItemComponent} from './dashboard/upcoming-occasion-list/upcoming-occation-item/upcoming-occation-item.component';
 import {DashboardByUserComponent} from './dashboard/dashboard-by-user/dashboard-by-user.component';
@@ -56,7 +55,6 @@ import {SecurityComponent} from './security/security.component';
     UserOccasionListComponent,
     UserResponsibleListComponent,
     UserResponsibleItemComponent,
-    UserOccasionItemComponent,
     UpcomingOccasionListComponent,
     UpcomingOccationItemComponent,
     DashboardByUserComponent,

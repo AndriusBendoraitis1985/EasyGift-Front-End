@@ -1,8 +1,13 @@
+<div class="row">
+  <div class="row">
+    <h3 style="margin-left: 40px">Events in 30 days period: </h3>
+  </div>
+</div>
 <hr>
 <div class="row">
   <div class="col">
-    <div *ngFor="let occasion of occasions">
-        <app-occasion-item [occasion]="occasion"></app-occasion-item>
+    <div *ngFor="let occasion of upcomingOccasions">
+      <app-occasion-item [occasion]="occasion"></app-occasion-item>
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Occasion} from '../../models/occasion.model';
 import {OccasionService} from '../../services/occasion.service';
+import {DashboardService} from '../../services/dashboard.service';
 
 @Component({
   selector: 'app-upcoming-occasion-list',
@@ -8,15 +9,15 @@ import {OccasionService} from '../../services/occasion.service';
   styleUrls: ['./upcoming-occasion-list.component.css']
 })
 export class UpcomingOccasionListComponent implements OnInit {
-  occasions: Occasion[];
+  upcomingOccasions: Occasion[];
 
-  constructor(private occasionService: OccasionService) {
+  constructor(private dashboardService: DashboardService) {
   }
 
   ngOnInit(): void {
-    this.occasionService.getAllOccasions().subscribe(
+    this.dashboardService.getAllOccasionsForMonthPeriod().subscribe(
       (data: Occasion[]) => {
-        this.occasions = data;
+        this.upcomingOccasions = data;
       });
   }
 }
