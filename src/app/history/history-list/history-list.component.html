@@ -8,6 +8,7 @@
     <th scope="col">Date</th>
     <th scope="col">Description</th>
     <th scope="col">Picture</th>
+    <th scope="col">Responsible</th>
   </tr>
   </thead>
   <tbody>
@@ -18,11 +19,13 @@
     <td>{{historyEntry.historyType.toUpperCase()}}</td>
     <td>{{historyEntry.historyDate| date: 'yyyy-MM-dd'}}</td>
     <td>{{historyEntry.historyDescription}}</td>
-    <td><a href="#" (click)="onSelectLink(historyEntry)" data-toggle="modal" data-target="#picture">
+    <td><a data-toggle="modal" data-target="#picture">
       <img
         src="{{historyEntry.historyImaginePath}}"
         style="max-height:50px"
-        alt="{{historyEntry.historyDescription}}"></a></td>
+        alt="{{historyEntry.historyDescription}}"></a>
+    </td>
+    <td style="color: darkmagenta; font-weight: bold">{{historyEntry.user.userName}}</td>
   </tr>
   </tbody>
 </table>

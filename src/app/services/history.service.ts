@@ -1,10 +1,11 @@
-import {Injectable, EventEmitter} from '@angular/core';
+import {EventEmitter, Injectable} from '@angular/core';
 import {HistoryEntry} from '../models/history-entry.model';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Gift} from '../models/gift.model';
 import {Occasion} from '../models/occasion.model';
 import {Router} from '@angular/router';
+import {User} from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -33,16 +34,17 @@ export class HistoryService {
     return this.http.post<HistoryEntry>(this.historyUrl, newHistoryEntry, this.httpOptions);
   }
 
-  public confirmAndBuy(gift: Gift, occasion: Occasion): void {
+  public confirmAndBuy(gift: Gift, occasion: Occasion, user: User): void {
     const name = occasion.userName;
     const surname = occasion.userSurname;
     const type = occasion.occasionType;
     const date = occasion.occasionDate;
     const description = gift.giftDescription;
     const imagine = gift.imaginePath;
-
-    this.newHistoryEntry = new HistoryEntry(name, surname, type, date, description, imagine);
+    this.newHistoryEntry = new HistoryEntry(name, surname, type, date, description, imagine, user);
     this.addNewHistoryEntry(this.newHistoryEntry).subscribe(result =>  this.router.navigate(['history']));
   }
-
+  public getHistoryEntriesByResponsibleUser(): Observable<HistoryEntry[]>{
+    return this.http.get<HistoryEntry[]>(this.historyUrl + '/' + localStorage.getItem('userName'), this.httpOptions);
+  }
 }

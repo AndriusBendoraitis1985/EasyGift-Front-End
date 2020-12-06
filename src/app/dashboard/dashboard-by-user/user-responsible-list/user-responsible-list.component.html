@@ -1,1 +1,14 @@
-<p>user-responsible-list works!</p>
+<div class="row">
+  <div class="row">
+    <h3>I am responsible for:</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div *ngFor="let historyEntry of historyEntriesByResponsibleUser">
+      <app-user-responsible-item [history]="historyEntry"></app-user-responsible-item>
+    </div>
+  </div>
+</div>
+<hr>
+<br>

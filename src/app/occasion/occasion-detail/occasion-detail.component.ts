@@ -5,6 +5,8 @@ import {Gift} from '../../models/gift.model';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {HistoryService} from '../../services/history.service';
 import {GiftService} from '../../services/gift.service';
+import {User} from '../../models/user.model';
+import {UserService} from '../../services/user.service';
 
 @Component({
   selector: 'app-occasion-detail',
@@ -14,13 +16,15 @@ import {GiftService} from '../../services/gift.service';
 export class OccasionDetailComponent implements OnInit {
   occasion: Occasion;
   id: number;
+  user: User;
 
   constructor(
     private occasionService: OccasionService,
     private giftService: GiftService,
     private route: ActivatedRoute,
     private router: Router,
-    private historyService: HistoryService) {
+    private historyService: HistoryService,
+    private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -37,6 +41,11 @@ export class OccasionDetailComponent implements OnInit {
         );
       }
     );
+    if (localStorage.getItem('userName')) {
+      this.userService.getUserByUserName(localStorage.getItem('userName')).subscribe((data: User) => {
+        this.user = data;
+      });
+    }
   }
 
   onAddLike(gift: Gift): void {
@@ -54,13 +63,13 @@ export class OccasionDetailComponent implements OnInit {
   }
 
   onConfirmMulti(gift: Gift, occasion: Occasion): void {
-    this.historyService.confirmAndBuy(gift, occasion);
+    this.historyService.confirmAndBuy(gift, occasion, this.user);
     this.giftService.deleteGiftById(gift.giftId).subscribe();
     alert('Multi gift confirmed!');
   }
 
   onConfirmSingle(gift: Gift, occasion: Occasion): void {
-    this.historyService.confirmAndBuy(gift, occasion);
+    this.historyService.confirmAndBuy(gift, occasion, this.user);
     this.onDeleteOccasion('Single gift confirmed!');
   }
 

@@ -53,3 +53,4 @@
   <div [hidden]="logoPath.valid" class="alert alert-danger">Logo is required</div>
   <button type="submit" class="btn btn-secondary" [disabled]="!signUpForm.valid">Create new user</button>
 </form>
+<p class="badge-success" style="margin-top: 10px" *ngIf="showMsg">{{newUserMsg}}</p>

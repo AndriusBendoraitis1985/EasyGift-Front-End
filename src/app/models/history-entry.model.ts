@@ -1,3 +1,5 @@
+import {User} from './user.model';
+
 export class HistoryEntry {
   public historyEntryId: number;
   public userName: string;
@@ -6,6 +8,7 @@ export class HistoryEntry {
   public historyDate: Date;
   public historyDescription: string;
   public historyImaginePath: string;
+  public user: User;
 
   constructor(
     name: string,
@@ -13,7 +16,8 @@ export class HistoryEntry {
     historyType: string,
     historyDate: Date,
     historyDescription: string,
-    historyImaginePath: string
+    historyImaginePath: string,
+    user: User
   ) {
     this.userName = name;
     this.userSurname = surname;
@@ -21,5 +25,6 @@ export class HistoryEntry {
     this.historyDate = historyDate;
     this.historyDescription = historyDescription;
     this.historyImaginePath = historyImaginePath;
+    this.user = user;
   }
   }

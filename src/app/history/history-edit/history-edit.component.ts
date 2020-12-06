@@ -1,7 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {HistoryService} from '../../services/history.service';
 import {HistoryEntry} from '../../models/history-entry.model';
-import {ActivatedRoute, Router} from '@angular/router';
+import {UserService} from '../../services/user.service';
+import {User} from '../../models/user.model';
 
 @Component({
   selector: 'app-history-edit',
@@ -17,15 +18,21 @@ export class HistoryEditComponent implements OnInit {
   @ViewChild('picture') linkInputRef;
 
   selectedHistoryEntryToEdit: HistoryEntry;
+  user: User;
 
-  constructor(private historyService: HistoryService) {
+  constructor(private historyService: HistoryService, private userService: UserService) {
+  }
+
+  ngOnInit(): void {
     this.historyService.selectedHistoryEntry.subscribe(
       (historyEntry: HistoryEntry) => {
         this.selectedHistoryEntryToEdit = historyEntry;
       });
-  }
-
-  ngOnInit(): void {
+    if (localStorage.getItem('userName')) {
+      this.userService.getUserByUserName(localStorage.getItem('userName')).subscribe((data: User) => {
+        this.user = data;
+      });
+    }
   }
 
   onAddNewEntry(): void {
@@ -35,7 +42,8 @@ export class HistoryEditComponent implements OnInit {
     const date = this.dateInputRef.nativeElement.value;
     const description = this.descriptionInputRef.nativeElement.value;
     const link = this.linkInputRef.nativeElement.value;
-    const newHistoryEntry = new HistoryEntry(name, surname, occasion, new Date(date), description, link);
+    const user = this.user;
+    const newHistoryEntry = new HistoryEntry(name, surname, occasion, new Date(date), description, link, user);
     this.historyService.addNewHistoryEntry(newHistoryEntry).subscribe();
     alert('New event added to history: ' + name + ' ' + surname + ' ' + occasion);
     location.reload();

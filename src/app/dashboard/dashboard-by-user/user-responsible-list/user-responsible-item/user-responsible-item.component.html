@@ -1,0 +1,10 @@
+<div *ngIf="history" class="list-group-item text-secondary clearfix">
+  <div class="float-left">
+    <h4 class="alert-heading">{{history.historyType.toUpperCase()}}</h4>
+    <p>{{history.userName}} {{history.userSurname}}</p>
+    <p>{{history.historyDate| date: 'yyyy-MM-dd'}}</p>
+  </div>
+  <span class="float-right">
+    <p><img src="{{history.historyImaginePath}}" style="max-width: 70px; max-height: 70px"></p>
+    </span>
+</div>

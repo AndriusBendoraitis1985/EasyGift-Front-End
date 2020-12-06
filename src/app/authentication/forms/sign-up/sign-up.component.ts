@@ -9,6 +9,8 @@ import {UserService} from '../../../services/user.service';
 })
 export class SignUpComponent implements OnInit {
   regRequest: RegRequest = {userName: '', password: '', email: '', logoPath: ''};
+  newUserMsg = 'New user created! Please Sign in!';
+  showMsg = false;
 
   constructor(private userService: UserService) {
   }
@@ -17,7 +19,11 @@ export class SignUpComponent implements OnInit {
   }
 
   onSubmit(): void {
-    this.userService.createNewUser(this.regRequest).subscribe();
+    this.userService.createNewUser(this.regRequest).subscribe(result => {
+      this.showMsg = true;
+    }, (error => {
+      console.log(error.message);
+    }));
   }
 
 }

@@ -26,6 +26,10 @@ export class UserService {
   }
 
   public createNewUser(regRequest: RegRequest): Observable<RegRequest> {
-    return this.http.post<RegRequest>(this.usersUrl, regRequest, this.httpOptions);
+    return this.http.post<RegRequest>(this.userUrl + '/new', regRequest, this.httpOptions);
+  }
+
+  public getUserByUserName(userName: string): Observable<User> {
+    return this.http.get<User>(this.usersUrl + '/' + userName, this.httpOptions);
   }
 }

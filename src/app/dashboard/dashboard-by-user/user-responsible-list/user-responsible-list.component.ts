@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HistoryService} from '../../../services/history.service';
+import {HistoryEntry} from '../../../models/history-entry.model';
 
 @Component({
   selector: 'app-user-responsible-list',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-responsible-list.component.css']
 })
 export class UserResponsibleListComponent implements OnInit {
+  historyEntriesByResponsibleUser: HistoryEntry[];
 
-  constructor() { }
+  constructor(private historyService: HistoryService) {
+  }
 
   ngOnInit(): void {
+    this.historyService
+      .getHistoryEntriesByResponsibleUser()
+      .subscribe((data: HistoryEntry[]) => {
+        this.historyEntriesByResponsibleUser = data;
+      });
   }
 
 }

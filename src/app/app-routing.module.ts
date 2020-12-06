@@ -34,7 +34,7 @@ const appRoutes: Routes = [
   },
   {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
   {
-    path: 'events', component: OccasionComponent, canActivateChild: [AuthGuard], children: [
+    path: 'events', component: OccasionComponent, canActivate: [AuthGuard], children: [
       {path: '', component: NoOccationSelectedComponent},
       {path: 'new', component: AddOccasionFormComponent},
       {path: ':id', component: OccasionDetailComponent},
