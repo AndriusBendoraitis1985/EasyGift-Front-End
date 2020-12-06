@@ -1,0 +1,30 @@
+<form (ngSubmit)="onSubmit()" #signInForm="ngForm" style="margin-top: 25px; width: 300px">
+  <div class="form-group">
+    <label for="userName">User name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="userName"
+      required
+      [(ngModel)]="authRequest.userName"
+      name="userName"
+      #userName='ngModel'
+      placeholder="User name">
+  </div>
+  <div [hidden]="userName.valid" class="alert alert-danger">User name is required</div>
+  <div class="form-group">
+    <label for="password">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      required
+      [(ngModel)]="authRequest.password"
+      name="password"
+      #password='ngModel'
+      placeholder="Password">
+  </div>
+  <div [hidden]="password.valid" class="alert alert-danger">Password is required</div>
+  <button type="submit" class="btn btn-secondary" [disabled]="!signInForm.valid">Login</button>
+</form>
+  <p class="alert alert-danger" style="margin-top: 10px" *ngIf="showErrorMessage">{{errorMessage}}</p>

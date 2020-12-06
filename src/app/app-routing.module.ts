@@ -11,12 +11,30 @@ import {EditOccasionFormComponent} from './forms/edit-occasion-form/edit-occasio
 import {AddOccasionFormComponent} from './forms/add-occasion-form/add-occasion-form.component';
 import {EditGiftFormComponent} from './forms/edit-gift-form/edit-gift-form.component';
 import {DashboardComponent} from './dashboard/dashboard.component';
+import {SecurityComponent} from './home/security/security.component';
+import {SignInComponent} from './authentication/forms/sign-in/sign-in.component';
+import {SignUpComponent} from './authentication/forms/sign-up/sign-up.component';
+import {WelcomeComponent} from './home/welcome/welcome.component';
+import {AuthGuard} from './authentication/auth.guard';
 
 const appRoutes: Routes = [
-  // {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
-  {path: 'dashboard', component: DashboardComponent},
-  {path: 'events', component: OccasionComponent, children: [
+  {path: '', redirectTo: '/home/security/sign-in', pathMatch: 'full'},
+  {
+    path: 'home', component: HomeComponent, children: [
+      {
+        path: 'security', component: SecurityComponent, children: [
+          {path: '', redirectTo: '/home/security/sign-in', pathMatch: 'full'},
+          {path: 'sign-in', component: SignInComponent},
+          {path: 'sign-up', component: SignUpComponent}
+        ]
+      },
+      {path: 'welcome', component: WelcomeComponent, canActivate: [AuthGuard]},
+      {path: '', redirectTo: '/home/welcome', pathMatch: 'full'}
+    ]
+  },
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard]},
+  {
+    path: 'events', component: OccasionComponent, canActivateChild: [AuthGuard], children: [
       {path: '', component: NoOccationSelectedComponent},
       {path: 'new', component: AddOccasionFormComponent},
       {path: ':id', component: OccasionDetailComponent},
@@ -25,7 +43,7 @@ const appRoutes: Routes = [
       {path: ':id/editGift/:giftId', component: EditGiftFormComponent},
     ]
   },
-  {path: 'history', component: HistoryComponent},
+  {path: 'history', component: HistoryComponent, canActivate: [AuthGuard]},
   {path: 'gifts', component: TopGiftsComponent}
 ];
 

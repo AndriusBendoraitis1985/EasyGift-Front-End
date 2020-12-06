@@ -16,7 +16,16 @@
       <a class="nav-link" routerLink="/gifts" routerLinkActive="active">Top Gifts</a>
     </div>
     <span class="navbar-text">
-      <div>User: <span>{{userName}}</span></div>
+      <div class="btn-group dropdown"><a class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+           aria-expanded="false" style="cursor: pointer">User: {{userName}}
+        <img style="max-height: 30px; ;border: 1px solid darkgrey; border-radius: 15px"
+               src="{{logoPath}}">
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width: 10px">
+          <a class="dropdown-item"  (click)="onLogOut()" style="cursor: pointer">Logout</a>
+          <a class="dropdown-item"  (click)="onLogOut()" style="cursor: pointer">New login</a>
+        </div>
+      </div>
     </span>
   </div>
 </nav>

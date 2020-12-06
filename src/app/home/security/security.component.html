@@ -1,0 +1,21 @@
+<div class="row">
+  <h3 style="margin: 25px 25px 25px 0">Welcome to Easy Gift App!</h3>
+  <h4 style="margin-bottom: 25px">Please Sign in or Sign up!</h4>
+</div>
+<div class="row">
+    <ul class="nav nav-tabs text-secondary" id="myTab" role="tablist" style="width: 300px">
+      <li class="nav-item">
+        <a class="nav-link active" id="sign-in-tab" data-toggle="tab" role="tab"
+           aria-controls="sign-in"
+           aria-selected="true" routerLink="sign-in">Sign in</a>
+      </li>
+      <li class="nav-item" >
+        <a class="nav-link" id="sign-up-tab" data-toggle="tab"  role="tab"
+           aria-controls="sign-up"
+           aria-selected="false" routerLink="sign-up">Sing up</a>
+      </li>
+    </ul>
+</div>
+<div class="row">
+  <router-outlet></router-outlet>
+</div>

@@ -1,4 +1,6 @@
-import {Component, OnInit, EventEmitter, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+
 
 @Component({
   selector: 'app-header',
@@ -7,16 +9,24 @@ import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   userName = 'non authorized';
+  logoPath: string;
   userLoggedIn = false;
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
-    if (localStorage.getItem('userName')){
+    if (localStorage.getItem('userName')) {
       this.userName = localStorage.getItem('userName');
       this.userLoggedIn = true;
     }
+    if (localStorage.getItem('logoPath')) {
+      this.logoPath = localStorage.getItem('logoPath');
+    }
   }
 
+  onLogOut(): void {
+    localStorage.clear();
+    this.router.navigate(['/home/security/sign-in']).then(r => location.reload());
+  }
 }

@@ -29,7 +29,11 @@ import {UserResponsibleItemComponent} from './dashboard/dashboard-by-user/user-r
 import {UpcomingOccasionListComponent} from './dashboard/upcoming-occasion-list/upcoming-occasion-list.component';
 import {UpcomingOccationItemComponent} from './dashboard/upcoming-occasion-list/upcoming-occation-item/upcoming-occation-item.component';
 import {DashboardByUserComponent} from './dashboard/dashboard-by-user/dashboard-by-user.component';
-import {SecurityComponent} from './security/security.component';
+import {SecurityComponent} from './home/security/security.component';
+import { SignInComponent } from './authentication/forms/sign-in/sign-in.component';
+import { SignUpComponent } from './authentication/forms/sign-up/sign-up.component';
+import { WelcomeComponent } from './home/welcome/welcome.component';
+import {AuthGuard} from './authentication/auth.guard';
 
 @NgModule({
   declarations: [
@@ -59,6 +63,9 @@ import {SecurityComponent} from './security/security.component';
     UpcomingOccationItemComponent,
     DashboardByUserComponent,
     SecurityComponent,
+    SignInComponent,
+    SignUpComponent,
+    WelcomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +73,7 @@ import {SecurityComponent} from './security/security.component';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
