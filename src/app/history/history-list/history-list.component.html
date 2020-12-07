@@ -22,8 +22,8 @@
     <td><a data-toggle="modal" data-target="#picture">
       <img
         src="{{historyEntry.historyImaginePath}}"
-        style="max-height:50px"
-        alt="{{historyEntry.historyDescription}}"></a>
+        style="max-height:50px; cursor: pointer"
+        alt="{{historyEntry.historyDescription}}" (click)="onSelectLink(historyEntry)"></a>
     </td>
     <td style="color: darkmagenta; font-weight: bold">{{historyEntry.user.userName}}</td>
   </tr>

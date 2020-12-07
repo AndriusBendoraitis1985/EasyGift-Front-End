@@ -1,4 +1,10 @@
 button {
-  margin: 5px;
+  margin: 5px
 }
-
+h3 {
+  margin-left: 40px;
+  margin-top: 20px;
+}
+small {
+  margin-left: 40px
+}

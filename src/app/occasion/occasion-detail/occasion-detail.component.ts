@@ -74,7 +74,10 @@ export class OccasionDetailComponent implements OnInit {
   }
 
   onDeleteGift(giftId: number): void {
-    this.giftService.deleteGiftById(giftId).subscribe((result => this.ngOnInit()));
+    this.giftService.deleteGiftById(giftId).subscribe((result => {
+      this.ngOnInit();
+      location.reload();
+    }));
     alert('Gift deleted successfully!');
   }
 }

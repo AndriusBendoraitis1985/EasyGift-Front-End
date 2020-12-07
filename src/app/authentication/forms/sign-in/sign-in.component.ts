@@ -29,6 +29,7 @@ export class SignInComponent implements OnInit {
       localStorage.setItem('userName', data.user.userName);
       localStorage.setItem('email', data.user.email);
       localStorage.setItem('userRole', data.user.role.name.substr(5));
+      this.showErrorMessage = false;
       this.router.navigate(['../../', 'welcome'], {relativeTo: this.activeRoute}).then(r => location.reload());
     }, (error: HttpErrorResponse) => {
       this.showErrorMessage = true;
