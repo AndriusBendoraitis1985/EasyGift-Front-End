@@ -14,3 +14,7 @@ img{
   max-width: 50px;
   padding-right: 5px;
 }
+.late {
+  border-color: red;
+  background-color: lightpink;
+}

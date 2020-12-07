@@ -1,7 +1,7 @@
 <div *ngIf="occasion" class="list-group-item text-secondary clearfix" style="cursor: pointer"
-     [routerLink]="['../events/'+ occasion.occasionId]">
+     [routerLink]="['../events/'+ occasion.occasionId]" [ngClass]="{late: dateToCompare<dateNow}">
   <div class="float-left">
-    <h4 class="alert-heading">{{occasion.occasionType.toUpperCase()}}</h4>
+    <h4 class="alert-heading" >{{occasion.occasionType.toUpperCase()}}</h4>
     <p>{{occasion.userName}} {{occasion.userSurname}}</p>
     <p>{{occasion.occasionDate| date: 'yyyy-MM-dd'}}</p>
   </div>

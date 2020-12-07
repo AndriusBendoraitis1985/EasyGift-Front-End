@@ -10,10 +10,13 @@ import {OccasionService} from '../../../services/occasion.service';
 export class OccasionItemComponent implements OnInit {
   @Input()
   occasion: Occasion;
+  dateToCompare: Date;
+  dateNow = new Date(Date.now());
 
   constructor(private occasionService: OccasionService) {
   }
 
   ngOnInit(): void {
+    this.dateToCompare = new Date(this.occasion.occasionDate);
   }
 }
